@@ -1,0 +1,2669 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARKCODE | Compra y Venta de Cuentas Free Fire & Recargas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        gamer: ['Orbitron', 'sans-serif'],
+                        tech: ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        ffdark: '#07090e',
+                        ffcard: '#101521',
+                        ffsurface: '#161d2e',
+                        ffcyan: '#00f0ff',
+                        ffgold: '#ffaa00',
+                        fforange: '#ff5500',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 20px rgba(0, 240, 255, 0.35)',
+                        'neon-gold': '0 0 20px rgba(255, 170, 0, 0.35)',
+                        'neon-emerald': '0 0 20px rgba(16, 185, 129, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-ffdark text-gray-100 font-sans antialiased selection:bg-ffcyan selection:text-ffdark overflow-x-hidden">
+
+    <!-- Navbar / Encabezado -->
+    <header class="sticky top-0 z-40 bg-ffdark/90 backdrop-blur-md border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f8f6f0] to-[#e6e2d6] border-2 border-ffcyan/60 flex items-center justify-center text-[#12161d] shadow-neon-cyan group-hover:scale-105 transition-transform p-1">
+                        <svg viewBox="0 0 120 120" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Darkcode">
+                            <circle cx="60" cy="60" r="51" stroke="currentColor" stroke-width="6.5"/>
+                            <path d="M44 33 L40 21 L51 26.5 L60 16.5 L69 26.5 L80 21 L76 33 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M60 31.5C41.5 31.5 31 43.5 31 58.5C31 66.2 34.2 71.5 38.8 74.5C39.8 75.2 40.5 76.2 40.5 77.5V86.5C40.5 91.5 44.5 95 49.5 95H70.5C75.5 95 79.5 91.5 79.5 86.5V77.5C79.5 76.2 80.2 75.2 81.2 74.5C85.8 71.5 89 66.2 89 58.5C89 43.5 78.5 31.5 60 31.5Z" stroke="currentColor" stroke-width="6.2" stroke-linejoin="round"/>
+                            <path d="M40.5 47.5C43 42.2 48.2 38.8 54.5 38.2" stroke="currentColor" stroke-width="4.2" stroke-linecap="round"/>
+                            <ellipse cx="47.2" cy="63" rx="6.2" ry="7.2" transform="rotate(-10 47.2 63)" fill="currentColor"/>
+                            <ellipse cx="72.8" cy="63" rx="6.2" ry="7.2" transform="rotate(10 72.8 63)" fill="currentColor"/>
+                            <path d="M60 69.5C58.6 69.5 55.5 75.2 55.8 76.8C56.1 78.2 58.5 77.6 60 77.6C61.5 77.6 63.9 78.2 64.2 76.8C64.5 75.2 61.4 69.5 60 69.5Z" fill="currentColor"/>
+                            <path d="M49.5 86.5V94.5M60 86.5V94.5M70.5 86.5V94.5" stroke="currentColor" stroke-width="4.8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-gamer font-extrabold text-xl sm:text-2xl tracking-wider text-white">DARK<span class="text-ffcyan">CODE</span></span>
+                        <span class="block text-[10px] font-tech uppercase tracking-[0.2em] text-ffgold font-bold -mt-0.5">Booyah Market Oficial</span>
+                    </div>
+                </a>
+
+                <nav class="hidden xl:flex items-center gap-6">
+                    <a href="#catalogo" class="text-sm font-semibold text-gray-300 hover:text-ffcyan transition-colors">Catálogo</a>
+                    <button type="button" onclick="openTopupModal()" class="text-sm font-semibold text-ffcyan hover:text-white transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-gem"></i> Recargas FF & Roblox
+                    </button>
+                    <a href="#como-funciona" class="text-sm font-semibold text-gray-300 hover:text-ffcyan transition-colors">¿Cómo funciona?</a>
+                </nav>
+
+                <div class="flex items-center gap-2 sm:gap-2.5">
+                    <!-- Botón Admin (Clave 0920) -->
+                    <button type="button" onclick="openAdminPanelModal()"
+                            class="flex items-center gap-1.5 bg-ffcard hover:bg-ffcyan/15 text-ffcyan border border-ffcyan/40 px-3 py-2.5 rounded-xl font-bold text-xs transition-all">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span id="nav-admin-label">Admin</span>
+                    </button>
+
+                    <!-- Botón Publicar Cuenta con Icono de Diamante en esquina superior -->
+                    <div class="relative inline-flex">
+                        <button type="button" onclick="openPublishModal(false)" 
+                                class="flex items-center gap-2 bg-gradient-to-r from-ffgold to-fforange hover:brightness-110 text-ffdark px-3 sm:px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-neon-gold">
+                            <i class="fa-solid fa-plus-circle"></i>
+                            <span id="nav-publish-fee-label">Publicar ($2)</span>
+                        </button>
+                        <button type="button" onclick="openTopupModal()" title="Recargar Diamantes Free Fire o Robux Roblox"
+                                class="absolute -top-2.5 -right-2.5 z-20 w-7 h-7 rounded-full bg-gradient-to-br from-ffcyan to-blue-600 text-ffdark border-2 border-ffdark flex items-center justify-center shadow-neon-cyan hover:scale-110 transition-transform cursor-pointer">
+                            <i class="fa-solid fa-gem text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- Selector Rápido WhatsApp Navbar -->
+                    <div class="relative" id="nav-wa-container">
+                        <button type="button" onclick="toggleNavWaMenu()" 
+                                class="flex items-center gap-2 bg-emerald-500/15 hover:bg-emerald-500 text-emerald-400 hover:text-ffdark border border-emerald-500/50 px-3 sm:px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span class="hidden sm:inline">WhatsApp</span>
+                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </button>
+
+                        <div id="nav-wa-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-ffcard border border-emerald-500/40 rounded-2xl shadow-2xl p-2 z-50">
+                            <div class="px-3 py-1.5 border-b border-gray-800 mb-1">
+                                <span class="block text-[10px] font-tech uppercase tracking-widest text-emerald-400 font-bold">Elige un Asesor Oficial</span>
+                            </div>
+                            <a href="https://wa.me/584125598221?text=Hola%20Asesor%201%20de%20DARKCODE%2C%20quisiera%20hablar%20personalmente%20contigo." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-emerald-500/15 text-gray-200 hover:text-white transition-colors">
+                                <div>
+                                    <span class="block text-xs font-bold text-emerald-400">Línea 1 • Asesor Principal</span>
+                                    <span class="text-xs font-mono text-gray-300">+58 0412-5598221</span>
+                                </div>
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            </a>
+                            <a href="https://wa.me/584161591048?text=Hola%20Asesor%202%20de%20DARKCODE%2C%20quisiera%20hablar%20personalmente%20contigo." 
+                               target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-emerald-500/15 text-gray-200 hover:text-white transition-colors mt-1">
+                                <div>
+                                    <span class="block text-xs font-bold text-ffcyan">Línea 2 • Asesor Secundario</span>
+                                    <span class="text-xs font-mono text-gray-300">+58 416-1591048</span>
+                                </div>
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Cinematográfico -->
+    <section class="relative pt-12 pb-16 lg:pt-20 lg:pb-20 overflow-hidden border-b border-gray-800/80">
+        <div class="absolute -top-24 left-1/4 w-[28rem] h-[28rem] bg-ffcyan/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute -bottom-24 right-1/4 w-[28rem] h-[28rem] bg-ffgold/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ffcard/90 border border-ffcyan/40 text-ffcyan text-xs font-tech font-bold uppercase tracking-widest mb-6 shadow-neon-cyan">
+                    <span class="w-2 h-2 rounded-full bg-ffcyan animate-ping"></span>
+                    Mercado Oficial Free Fire • Recargas FF & Roblox • Pago Móvil
+                </div>
+
+                <h1 class="font-gamer font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-6 leading-[1.15]">
+                    COMPRA Y VENDE CUENTAS <br class="hidden sm:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-ffcyan via-sky-300 to-ffgold">DE FREE FIRE AL INSTANTE</span>
+                </h1>
+
+                <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg mb-10 leading-relaxed">
+                    Adquiere cuentas verificadas con Pago Móvil, recarga <strong class="text-ffcyan">Diamantes o Robux</strong> o publica tu cuenta por una comisión única de <strong class="text-ffgold" id="hero-fee-text">$2 USD</strong>.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                    <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark font-gamer font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-cyan flex items-center justify-center gap-2.5">
+                        <i class="fa-solid fa-gamepad text-lg"></i> Explorar Cuentas
+                    </a>
+
+                    <div class="relative w-full sm:w-auto">
+                        <button type="button" onclick="openPublishModal(false)" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-ffgold to-fforange text-ffdark font-gamer font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-gold flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-plus-circle text-lg"></i> <span id="hero-publish-btn-text">Publicar Cuenta ($2 USD)</span>
+                        </button>
+                        <button type="button" onclick="openTopupModal()" title="Recargar Free Fire o Roblox"
+                                class="absolute -top-3 -right-2.5 z-20 px-2.5 py-1 rounded-full bg-gradient-to-r from-ffcyan to-blue-600 text-ffdark border-2 border-ffdark font-gamer font-extrabold text-[10px] flex items-center gap-1 shadow-neon-cyan hover:scale-105 transition-transform cursor-pointer">
+                            <i class="fa-solid fa-gem text-xs"></i> RECARGAR
+                        </button>
+                    </div>
+
+                    <button type="button" onclick="toggleFloatingWaMenu(true)"
+                       class="w-full sm:w-auto px-7 py-4 rounded-xl bg-ffcard hover:bg-emerald-600/20 text-emerald-400 border border-emerald-500/50 font-bold text-sm transition-all flex items-center justify-center gap-2.5">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Hablar Personalmente
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <div class="bg-ffcard/90 backdrop-blur-sm border border-gray-800 rounded-2xl p-4 sm:p-5 text-center">
+                    <span class="block font-gamer font-extrabold text-2xl sm:text-3xl text-ffcyan" id="stat-live-count">0</span>
+                    <span class="text-xs font-tech uppercase tracking-wider text-gray-400 font-semibold">Cuentas en Catálogo</span>
+                </div>
+                <div class="bg-ffcard/90 backdrop-blur-sm border border-gray-800 rounded-2xl p-4 sm:p-5 text-center">
+                    <span class="block font-gamer font-extrabold text-2xl sm:text-3xl text-ffgold">100%</span>
+                    <span class="text-xs font-tech uppercase tracking-wider text-gray-400 font-semibold">Verificación Segura</span>
+                </div>
+                <div class="bg-ffcard/90 backdrop-blur-sm border border-gray-800 rounded-2xl p-4 sm:p-5 text-center cursor-pointer hover:border-ffcyan/50 transition-colors" onclick="openTopupModal()">
+                    <span class="block font-gamer font-extrabold text-2xl sm:text-3xl text-ffcyan"><i class="fa-solid fa-gem"></i></span>
+                    <span class="text-xs font-tech uppercase tracking-wider text-gray-300 font-semibold">Recargas FF & Roblox</span>
+                </div>
+                <div class="bg-ffcard/90 backdrop-blur-sm border border-ffgold/40 rounded-2xl p-4 sm:p-5 text-center">
+                    <span class="block font-gamer font-extrabold text-2xl sm:text-3xl text-ffgold" id="stat-fee-usd">$2 USD</span>
+                    <span class="text-xs font-tech uppercase tracking-wider text-gray-300 font-semibold">Comisión Publicación</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Catálogo Dinámico con Pestañas -->
+    <section id="catalogo" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-ffcard p-2 rounded-2xl border border-gray-800 mb-8 grid grid-cols-1 sm:grid-cols-2 gap-2 shadow-xl">
+            <button type="button" id="tab-community-store" onclick="switchCatalogTab('community')"
+                    class="py-4 px-5 rounded-xl font-gamer font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2.5 bg-gradient-to-r from-ffgold to-fforange text-ffdark shadow-neon-gold">
+                <i class="fa-solid fa-users text-base"></i>
+                <span>Catálogo Comunidad</span>
+                <span id="badge-community-count" class="px-2 py-0.5 rounded-full bg-ffdark/20 text-ffdark text-xs font-extrabold">0</span>
+            </button>
+
+            <button type="button" id="tab-admin-store" onclick="switchCatalogTab('admin')"
+                    class="py-4 px-5 rounded-xl font-gamer font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2.5 bg-ffdark text-gray-300 hover:text-white border border-gray-800">
+                <i class="fa-solid fa-crown text-base text-ffcyan"></i>
+                <span>Comprar con el Administrador</span>
+                <span id="badge-admin-count" class="px-2 py-0.5 rounded-full bg-ffcyan/20 text-ffcyan text-xs font-extrabold">0</span>
+            </button>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <div id="section-tag-badge" class="inline-flex items-center gap-2 text-xs font-tech font-bold uppercase tracking-widest text-ffgold mb-1">
+                    <span class="w-2 h-2 rounded-full bg-ffgold animate-pulse"></span>
+                    Catálogo Comunitario • Comisión de Publicación <span id="tag-fee-text">$2 USD</span>
+                </div>
+                <h2 id="section-main-title" class="font-gamer font-extrabold text-2xl sm:text-4xl text-white uppercase tracking-wide">
+                    Catálogo <span class="text-ffgold">Comunidad</span>
+                </h2>
+                <p id="section-sub-desc" class="text-gray-400 text-sm mt-1">
+                    Cuentas publicadas por jugadores con fotos reales y contacto directo de WhatsApp para hablar con el vendedor.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+                <div class="text-sm text-gray-300 bg-ffcard px-4 py-2.5 rounded-xl border border-gray-800 font-tech font-semibold tracking-wide">
+                    Disponibles: <span id="account-count" class="text-ffcyan font-gamer font-bold">0</span>
+                </div>
+                <div class="relative inline-flex">
+                    <button type="button" id="header-publish-action-btn" onclick="handleContextualPublishClick()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-ffgold to-fforange text-ffdark font-bold text-sm hover:brightness-110 transition-all shadow-neon-gold flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i> <span id="header-publish-action-text">Publicar mi Cuenta ($2 USD)</span>
+                    </button>
+                    <button type="button" onclick="openTopupModal()" title="Recargar Diamantes o Robux"
+                            class="absolute -top-2.5 -right-2.5 z-20 w-7 h-7 rounded-full bg-gradient-to-br from-ffcyan to-blue-600 text-ffdark border-2 border-ffdark flex items-center justify-center shadow-neon-cyan hover:scale-110 transition-transform cursor-pointer">
+                        <i class="fa-solid fa-gem text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Búsqueda y Filtros -->
+        <div class="bg-ffcard p-4 sm:p-6 rounded-2xl border border-gray-800/90 mb-10 shadow-xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="sm:col-span-2">
+                    <label for="search-input" class="block text-xs font-tech font-bold text-gray-400 uppercase tracking-wider mb-1.5">Buscar por Título, Skin, Pase o Arma Evolutiva</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-ffcyan/70"></i>
+                        <input type="text" id="search-input" placeholder="Ej. Sakura, Cobra, AK47 Dragón, Criminal, Angelical..." 
+                               class="w-full bg-ffdark border border-gray-700 focus:border-ffcyan rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="rank-filter" class="block text-xs font-tech font-bold text-gray-400 uppercase tracking-wider mb-1.5">Rango Actual</label>
+                    <select id="rank-filter" class="w-full bg-ffdark border border-gray-700 focus:border-ffcyan rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                        <option value="all">Todos los rangos</option>
+                        <option value="Gran Maestro">Gran Maestro</option>
+                        <option value="Heroico">Heroico</option>
+                        <option value="Maestro">Maestro</option>
+                        <option value="Diamante">Diamante</option>
+                        <option value="Platino">Platino</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="region-filter" class="block text-xs font-tech font-bold text-gray-400 uppercase tracking-wider mb-1.5">Región</label>
+                    <select id="region-filter" class="w-full bg-ffdark border border-gray-700 focus:border-ffcyan rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                        <option value="all">Todas las regiones</option>
+                        <option value="EE.UU.">EE.UU.</option>
+                        <option value="Sudamérica">Sudamérica</option>
+                        <option value="Norteamérica">Norteamérica</option>
+                        <option value="Europa">Europa</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading-state" class="hidden text-center py-16 bg-ffcard/60 rounded-3xl border border-gray-800">
+            <i class="fa-solid fa-circle-notch fa-spin text-4xl text-ffcyan mb-4"></i>
+            <p class="text-gray-300 font-tech uppercase tracking-wider text-base">Sincronizando catálogo en vivo...</p>
+        </div>
+
+        <div id="accounts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <div id="empty-catalog-state" class="hidden text-center py-16 px-6 bg-gradient-to-b from-ffcard to-ffdark rounded-3xl border border-dashed border-ffcyan/40 shadow-2xl">
+            <div id="empty-icon-box" class="w-20 h-20 rounded-2xl bg-gradient-to-br from-ffcyan/20 to-blue-500/20 border border-ffcyan/40 text-ffcyan flex items-center justify-center text-4xl mx-auto mb-5 shadow-neon-cyan">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 id="empty-title" class="font-gamer text-2xl sm:text-3xl font-extrabold text-white mb-3 uppercase">Tienda Oficial del Administrador</h3>
+            <p id="empty-desc" class="text-gray-400 text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed"></p>
+            <div id="empty-actions" class="flex flex-col sm:flex-row items-center justify-center gap-4"></div>
+        </div>
+
+        <div id="empty-filter-state" class="hidden text-center py-16 px-6 bg-ffcard rounded-3xl border border-gray-800">
+            <i class="fa-solid fa-filter-circle-xmark text-5xl text-gray-600 mb-4"></i>
+            <h3 class="font-gamer text-xl sm:text-2xl font-bold text-white mb-2">Sin resultados para tu filtro</h3>
+            <p class="text-gray-400 text-sm mb-6">Ninguna cuenta publicada coincide con esos criterios.</p>
+            <button type="button" onclick="resetFilters()" class="px-6 py-3 rounded-xl bg-ffcyan text-ffdark font-bold text-sm hover:brightness-110 transition-all">
+                Mostrar Todas las Cuentas
+            </button>
+        </div>
+    </section>
+
+    <!-- Sección "¿Cómo funciona?" -->
+    <section id="como-funciona" class="py-16 bg-ffcard/40 border-y border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-tech font-bold uppercase tracking-[0.2em] text-ffcyan">Proceso Rápido y Transparente</span>
+                <h2 class="font-gamer font-extrabold text-2xl sm:text-4xl text-white uppercase mt-1">
+                    ¿Cómo <span class="text-ffgold">Funciona?</span>
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Compra cuentas verificadas, recarga Diamantes o Robux y publica la tuya en nuestro catálogo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-ffcard p-7 rounded-2xl border border-gray-800 relative overflow-hidden group hover:border-ffcyan/50 transition-colors">
+                    <span class="absolute -top-3 right-4 font-gamer font-black text-7xl text-white/[0.03] select-none">01</span>
+                    <div class="w-12 h-12 rounded-xl bg-ffcyan/10 border border-ffcyan/30 text-ffcyan flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-gamer font-bold text-lg text-white mb-2">1. Cuentas, Recargas o Publicar</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Pulsa el <strong class="text-ffcyan">icono de Diamante</strong> para recargar Free Fire o Roblox, compra cuentas verificadas o publica la tuya por <strong class="text-ffgold" id="step1-fee-text">$2 USD</strong>.
+                    </p>
+                </div>
+
+                <div class="bg-ffcard p-7 rounded-2xl border border-gray-800 relative overflow-hidden group hover:border-ffgold/50 transition-colors">
+                    <span class="absolute -top-3 right-4 font-gamer font-black text-7xl text-white/[0.03] select-none">02</span>
+                    <div class="w-12 h-12 rounded-xl bg-ffgold/10 border border-ffgold/30 text-ffgold flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="font-gamer font-bold text-lg text-white mb-2">2. Pago Móvil y Verificador</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Copia todos los datos de <strong class="text-ffgold">Pago Móvil</strong> con un clic, realiza tu transferencia, adjunta la captura del comprobante y valida tu referencia.
+                    </p>
+                </div>
+
+                <div class="bg-ffdark/90 border border-emerald-500/40 rounded-2xl p-6 text-center shadow-neon-emerald flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-3">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <span class="text-xs font-tech uppercase tracking-widest text-emerald-400 font-bold">Líneas Directas de Atención</span>
+                        <h3 class="font-gamer font-bold text-lg text-white mt-1 mb-1">Asesores Oficiales DARKCODE</h3>
+                        <p class="text-gray-400 text-xs mb-4">
+                            Confirmación inmediata tras validar tu comprobante de Pago Móvil.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <a href="https://wa.me/584125598221?text=Hola%20Asesor%201%20de%20DARKCODE%2C%20quisiera%20hablar%20personalmente%20contigo." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Línea 1: +58 0412-5598221
+                        </a>
+                        <a href="https://wa.me/584161591048?text=Hola%20Asesor%202%20de%20DARKCODE%2C%20quisiera%20hablar%20personalmente%20contigo." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="w-full py-2.5 px-4 rounded-xl bg-ffcard hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Línea 2: +58 416-1591048
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ffdark border-t border-gray-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#f8f6f0] to-[#e6e2d6] border border-ffcyan/50 flex items-center justify-center text-[#12161d] p-1">
+                        <svg viewBox="0 0 120 120" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Darkcode">
+                            <circle cx="60" cy="60" r="51" stroke="currentColor" stroke-width="6.5"/>
+                            <path d="M44 33 L40 21 L51 26.5 L60 16.5 L69 26.5 L80 21 L76 33 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M60 31.5C41.5 31.5 31 43.5 31 58.5C31 66.2 34.2 71.5 38.8 74.5C39.8 75.2 40.5 76.2 40.5 77.5V86.5C40.5 91.5 44.5 95 49.5 95H70.5C75.5 95 79.5 91.5 79.5 86.5V77.5C79.5 76.2 80.2 75.2 81.2 74.5C85.8 71.5 89 66.2 89 58.5C89 43.5 78.5 31.5 60 31.5Z" stroke="currentColor" stroke-width="6.2" stroke-linejoin="round"/>
+                            <path d="M40.5 47.5C43 42.2 48.2 38.8 54.5 38.2" stroke="currentColor" stroke-width="4.2" stroke-linecap="round"/>
+                            <ellipse cx="47.2" cy="63" rx="6.2" ry="7.2" transform="rotate(-10 47.2 63)" fill="currentColor"/>
+                            <ellipse cx="72.8" cy="63" rx="6.2" ry="7.2" transform="rotate(10 72.8 63)" fill="currentColor"/>
+                            <path d="M60 69.5C58.6 69.5 55.5 75.2 55.8 76.8C56.1 78.2 58.5 77.6 60 77.6C61.5 77.6 63.9 78.2 64.2 76.8C64.5 75.2 61.4 69.5 60 69.5Z" fill="currentColor"/>
+                            <path d="M49.5 86.5V94.5M60 86.5V94.5M70.5 86.5V94.5" stroke="currentColor" stroke-width="4.8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-gamer font-bold text-xl text-white">DARK<span class="text-ffcyan">CODE</span></span>
+                        <p class="text-xs text-gray-500">Tienda Oficial de Cuentas Free Fire & Recargas.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <button type="button" onclick="openAdminPanelModal()" class="text-sm font-semibold text-ffcyan hover:underline mr-1 flex items-center gap-1">
+                        <i class="fa-solid fa-user-shield"></i> Panel Admin (0920)
+                    </button>
+                    <button type="button" onclick="openTopupModal()" class="text-sm font-semibold text-ffcyan hover:underline mr-1 flex items-center gap-1">
+                        <i class="fa-solid fa-gem"></i> Recargar FF / Roblox
+                    </button>
+                    <button type="button" onclick="openPublishModal(false)" class="text-sm font-semibold text-ffgold hover:underline mr-1" id="footer-publish-link">
+                        + Publicar Cuenta ($2 USD)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Menú Flotante WhatsApp -->
+    <div id="floating-wa-container" class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+        <div id="floating-wa-menu" class="hidden mb-3 w-72 bg-ffcard/95 backdrop-blur-md border border-emerald-500/50 rounded-2xl shadow-2xl p-3.5 transition-all">
+            <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-gray-800">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span class="font-tech font-bold text-xs uppercase tracking-wider text-white">Asesores en Línea</span>
+                </div>
+                <button type="button" onclick="toggleFloatingWaMenu(false)" class="text-gray-400 hover:text-white text-xs p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="space-y-2">
+                <a href="https://wa.me/584125598221?text=Hola%20Asesor%201%20de%20DARKCODE%2C%20quisiera%20hablar%20personalmente%20contigo." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-between p-2.5 rounded-xl bg-ffdark hover:bg-emerald-500/15 border border-gray-800 hover:border-emerald-500/50 transition-all group">
+                    <div>
+                        <span class="block text-[11px] font-tech uppercase font-bold text-emerald-400">Asesor Principal (Línea 1)</span>
+                        <span class="text-sm font-mono font-bold text-white">+58 0412-5598221</span>
+                    </div>
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-ffdark flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/584161591048?text=Hola%20Asesor%202%20de%20DARKCODE%2C%20quisiera%20hablar%20personalmente%20contigo." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-between p-2.5 rounded-xl bg-ffdark hover:bg-ffcyan/15 border border-gray-800 hover:border-ffcyan/50 transition-all group">
+                    <div>
+                        <span class="block text-[11px] font-tech uppercase font-bold text-ffcyan">Asesor Secundario (Línea 2)</span>
+                        <span class="text-sm font-mono font-bold text-white">+58 416-1591048</span>
+                    </div>
+                    <div class="w-9 h-9 rounded-lg bg-ffcyan/20 text-ffcyan group-hover:bg-ffcyan group-hover:text-ffdark flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <button type="button" onclick="toggleFloatingWaMenu()" 
+                aria-label="Abrir opciones de WhatsApp"
+                class="flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold px-4 py-3.5 rounded-full shadow-neon-emerald hover:scale-105 transition-all">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span class="text-xs sm:text-sm font-extrabold">WhatsApp Oficial</span>
+        </button>
+    </div>
+
+    <!-- MODAL RECARGAS FREE FIRE & ROBLOX -->
+    <div id="topup-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-ffcyan/40 rounded-3xl max-w-2xl w-full max-h-[94vh] overflow-y-auto shadow-2xl relative">
+            <div class="sticky top-0 z-20 bg-ffcard/95 backdrop-blur-md px-5 sm:px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-ffcyan/25 to-blue-600/25 border border-ffcyan/40 text-ffcyan flex items-center justify-center shadow-neon-cyan">
+                        <i class="fa-solid fa-gem text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-gamer font-bold text-base sm:text-lg text-white uppercase">Recargas Oficiales</h3>
+                        <p class="text-xs text-ffcyan font-semibold">Free Fire (Diamantes) & Roblox (Robux)</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeTopupModal()" class="w-9 h-9 rounded-full bg-ffdark hover:bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-5">
+                <div>
+                    <label class="block text-xs font-tech font-bold uppercase tracking-widest text-gray-300 mb-2.5">
+                        1. ¿Qué quieres recargar hoy?
+                    </label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" id="topup-game-btn-freefire" onclick="selectTopupGame('freefire')"
+                                class="p-4 rounded-2xl border-2 border-gray-800 bg-ffdark hover:border-ffcyan/60 transition-all text-left flex items-center gap-3 group">
+                            <div class="w-11 h-11 rounded-xl bg-ffcyan/15 text-ffcyan flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <div>
+                                <span class="block font-gamer font-bold text-sm sm:text-base text-white group-hover:text-ffcyan">Free Fire</span>
+                                <span class="text-[11px] text-gray-400">Diamantes por ID</span>
+                            </div>
+                        </button>
+
+                        <button type="button" id="topup-game-btn-roblox" onclick="selectTopupGame('roblox')"
+                                class="p-4 rounded-2xl border-2 border-gray-800 bg-ffdark hover:border-ffgold/60 transition-all text-left flex items-center gap-3 group">
+                            <div class="w-11 h-11 rounded-xl bg-ffgold/15 text-ffgold flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <div>
+                                <span class="block font-gamer font-bold text-sm sm:text-base text-white group-hover:text-ffgold">Roblox</span>
+                                <span class="text-[11px] text-gray-400">Robux a tu Usuario</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="topup-amounts-section" class="hidden space-y-2.5">
+                    <label id="topup-amounts-label" class="block text-xs font-tech font-bold uppercase tracking-widest text-ffcyan">
+                        2. Elige el monto a recargar:
+                    </label>
+                    <div id="topup-packages-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5"></div>
+                </div>
+
+                <div id="topup-payment-section" class="hidden space-y-5 pt-2 border-t border-gray-800">
+                    <div class="bg-ffdark p-4 rounded-2xl border border-ffgold/50 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] font-tech uppercase tracking-wider text-gray-400">Paquete Seleccionado</span>
+                            <span id="topup-selected-pkg-name" class="font-gamer font-bold text-sm sm:text-base text-white">--</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-[10px] font-tech uppercase tracking-wider text-gray-400">Precio a Pagar</span>
+                            <span id="topup-selected-pkg-price" class="font-gamer font-extrabold text-2xl text-ffgold">$0.00 USD</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-ffsurface to-ffdark p-4 sm:p-5 rounded-2xl border border-ffgold/40 shadow-lg space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-tech font-bold uppercase tracking-widest text-ffgold flex items-center gap-2">
+                                <i class="fa-solid fa-mobile-screen-button text-base"></i> Datos de Pago Móvil Oficial
+                            </span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[11px] font-bold border border-emerald-500/30">
+                                Entrega Inmediata
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 bg-ffdark/90 p-3.5 rounded-xl border border-gray-800 text-xs sm:text-sm">
+                            <div>
+                                <span class="block text-[10px] font-tech uppercase text-gray-400">Banco</span>
+                                <span class="font-bold text-white pm-field-bank">Banco de los Trabajadores (0175)</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-tech uppercase text-gray-400">Número de tlf</span>
+                                <span class="font-mono font-bold text-ffcyan pm-field-phone">0414-5047264</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-tech uppercase text-gray-400">Cédula</span>
+                                <span class="font-mono font-bold text-white pm-field-id">10639201</span>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="copyPagoMovilData('topup')" id="copy-pm-topup-btn"
+                                class="w-full py-3 px-4 rounded-xl bg-ffgold/15 hover:bg-ffgold text-ffgold hover:text-ffdark border border-ffgold/50 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-copy"></i> <span>Copiar todos los datos</span>
+                        </button>
+                    </div>
+
+                    <form id="topup-payment-form" class="space-y-4">
+                        <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-2">
+                            <label for="topup-player-id" id="topup-player-id-label" class="block text-xs font-tech font-bold text-ffcyan uppercase tracking-wider">
+                                ID de Jugador Free Fire *
+                            </label>
+                            <input type="text" id="topup-player-id" required oninput="validateTopupVerifier()"
+                                   placeholder="Ingresa tu ID numérico de Free Fire..."
+                                   class="w-full bg-ffcard border border-gray-700 focus:border-ffcyan rounded-xl px-4 py-2.5 text-sm font-mono text-white placeholder-gray-500 focus:outline-none">
+                        </div>
+
+                        <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-3">
+                            <label for="topup-screenshot" class="block text-xs font-tech font-bold text-gray-200 uppercase tracking-wider">
+                                <i class="fa-solid fa-image text-ffcyan mr-1"></i> Adjuntar Captura del Pago Móvil *
+                            </label>
+                            <input type="file" id="topup-screenshot" accept="image/*" required
+                                   onchange="handleScreenshotPreview(this, 'topup-preview-box', 'topup-preview-img'); validateTopupVerifier();"
+                                   class="w-full text-xs text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-ffcyan file:text-ffdark hover:file:brightness-110 cursor-pointer bg-ffcard border border-gray-700 rounded-xl p-2">
+                            <div id="topup-preview-box" class="hidden mt-2 relative rounded-xl overflow-hidden border border-emerald-500/40 bg-black/50 p-2 text-center">
+                                <img id="topup-preview-img" src="" alt="Vista previa comprobante recarga" class="max-h-40 mx-auto rounded-lg object-contain">
+                            </div>
+                        </div>
+
+                        <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-tech font-bold text-ffcyan uppercase tracking-wider">
+                                    <i class="fa-solid fa-shield-check mr-1"></i> Verificación de Pago *
+                                </span>
+                                <span id="topup-verifier-badge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-400">
+                                    Verificación Pendiente
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label for="topup-ref" class="block text-[11px] font-semibold text-gray-400 mb-1">Referencia Pago Móvil (4 a 12 dígitos) *</label>
+                                    <input type="text" id="topup-ref" required minlength="4" maxlength="12" pattern="[0-9]{4,12}"
+                                           oninput="validateTopupVerifier()" placeholder="Ej. 591823"
+                                           class="w-full bg-ffcard border border-gray-700 focus:border-ffcyan rounded-xl px-3.5 py-2.5 text-sm font-mono text-white placeholder-gray-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="topup-buyer-phone" class="block text-[11px] font-semibold text-gray-400 mb-1">Tu Teléfono / WhatsApp *</label>
+                                    <input type="tel" id="topup-buyer-phone" required minlength="7"
+                                           oninput="validateTopupVerifier()" placeholder="Ej. 0412-1234567"
+                                           class="w-full bg-ffcard border border-gray-700 focus:border-ffcyan rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div id="topup-verifier-status" class="p-3 rounded-xl bg-ffcard/80 border border-gray-800 text-xs text-gray-400 flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-info text-ffcyan"></i>
+                                <span>Completa tu ID/Usuario, adjunta la captura y escribe la referencia para confirmar.</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="topup-confirm-btn"
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 text-ffdark font-gamer font-extrabold text-sm sm:text-base uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-emerald flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-check text-lg"></i> Confirmar Pago
+                        </button>
+                    </form>
+
+                    <div id="topup-confirmed-ticket" class="hidden bg-emerald-950/30 border border-emerald-500/50 rounded-2xl p-5 text-center space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-gamer font-bold text-xl text-white">¡Recarga Verificada y Confirmada!</h4>
+                            <p class="text-xs sm:text-sm text-gray-300 mt-1">Envía el comprobante por WhatsApp para acreditar tu recarga al instante:</p>
+                        </div>
+                        <div id="topup-ticket-details" class="bg-ffdark p-3.5 rounded-xl border border-gray-800 text-xs text-left font-mono text-gray-300 space-y-1"></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <a id="topup-wa-1" href="#" target="_blank" rel="noopener noreferrer"
+                               class="py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Comprobante (0414-5047264)
+                            </a>
+                            <a id="topup-wa-2" href="#" target="_blank" rel="noopener noreferrer"
+                               class="py-3 px-4 rounded-xl bg-ffdark hover:bg-ffcyan/15 text-ffcyan border border-ffcyan/50 font-bold text-xs sm:text-sm flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Asesor Línea 1 (0412)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL COMPRAR CUENTA -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-ffcyan/40 rounded-3xl max-w-2xl w-full max-h-[94vh] overflow-y-auto shadow-2xl relative">
+            <div class="sticky top-0 z-20 bg-ffcard/95 backdrop-blur-md px-5 sm:px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-ffcyan/15 text-ffcyan flex items-center justify-center">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-gamer font-bold text-base sm:text-lg text-white uppercase">Comprar Cuenta • Pago Móvil</h3>
+                        <p id="checkout-subtitle" class="text-xs text-ffcyan font-semibold">Compra Directa Verificada</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeCheckoutModal()" class="w-9 h-9 rounded-full bg-ffdark hover:bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-5">
+                <div id="checkout-account-summary" class="bg-ffdark p-4 rounded-2xl border border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3"></div>
+
+                <div class="bg-gradient-to-br from-ffsurface to-ffdark p-4 sm:p-5 rounded-2xl border border-ffgold/40 shadow-lg space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-tech font-bold uppercase tracking-widest text-ffgold flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen-button text-base"></i> Datos de Pago Móvil Oficial
+                        </span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[11px] font-bold border border-emerald-500/30">
+                            Activo 24/7
+                        </span>
+                    </div>
+
+                    <div id="checkout-pm-box" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 bg-ffdark/90 p-3.5 rounded-xl border border-gray-800 text-xs sm:text-sm">
+                        <div>
+                            <span class="block text-[10px] font-tech uppercase text-gray-400">Banco</span>
+                            <span class="font-bold text-white pm-field-bank">Banco de los Trabajadores (0175)</span>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] font-tech uppercase text-gray-400">Número de tlf</span>
+                            <span class="font-mono font-bold text-ffcyan pm-field-phone">0414-5047264</span>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] font-tech uppercase text-gray-400">Cédula</span>
+                            <span class="font-mono font-bold text-white pm-field-id">10639201</span>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="copyPagoMovilData('checkout')" id="copy-pm-checkout-btn"
+                            class="w-full py-3 px-4 rounded-xl bg-ffgold/15 hover:bg-ffgold text-ffgold hover:text-ffdark border border-ffgold/50 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-copy"></i> <span>Copiar todos los datos</span>
+                    </button>
+                </div>
+
+                <form id="checkout-payment-form" class="space-y-4">
+                    <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-3">
+                        <label for="checkout-screenshot" class="block text-xs font-tech font-bold text-gray-200 uppercase tracking-wider">
+                            <i class="fa-solid fa-image text-ffcyan mr-1"></i> 1. Adjuntar Captura del Pago Móvil *
+                        </label>
+                        <input type="file" id="checkout-screenshot" accept="image/*" required
+                               onchange="handleScreenshotPreview(this, 'checkout-preview-box', 'checkout-preview-img')"
+                               class="w-full text-xs text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-ffcyan file:text-ffdark hover:file:brightness-110 cursor-pointer bg-ffcard border border-gray-700 rounded-xl p-2">
+                        <div id="checkout-preview-box" class="hidden mt-2 relative rounded-xl overflow-hidden border border-emerald-500/40 bg-black/50 p-2 text-center">
+                            <img id="checkout-preview-img" src="" alt="Vista previa comprobante" class="max-h-44 mx-auto rounded-lg object-contain">
+                        </div>
+                    </div>
+
+                    <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-tech font-bold text-ffcyan uppercase tracking-wider">
+                                <i class="fa-solid fa-shield-check mr-1"></i> 2. Verificador de Transacción *
+                            </span>
+                            <span id="checkout-verifier-badge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-400">
+                                Esperando datos...
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label for="checkout-ref" class="block text-[11px] font-semibold text-gray-400 mb-1">Referencia Pago Móvil (4 a 12 dígitos) *</label>
+                                <input type="text" id="checkout-ref" required minlength="4" maxlength="12" pattern="[0-9]{4,12}"
+                                       oninput="validatePaymentVerifier('checkout')" placeholder="Ej. 482910"
+                                       class="w-full bg-ffcard border border-gray-700 focus:border-ffcyan rounded-xl px-3.5 py-2.5 text-sm font-mono text-white placeholder-gray-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="checkout-buyer-phone" class="block text-[11px] font-semibold text-gray-400 mb-1">Tu Teléfono / WhatsApp *</label>
+                                <input type="tel" id="checkout-buyer-phone" required minlength="7"
+                                       oninput="validatePaymentVerifier('checkout')" placeholder="Ej. 0412-1234567"
+                                       class="w-full bg-ffcard border border-gray-700 focus:border-ffcyan rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div id="checkout-verifier-status" class="p-3 rounded-xl bg-ffcard/80 border border-gray-800 text-xs text-gray-400 flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-info text-ffcyan"></i>
+                            <span>Adjunta la captura y escribe el número de referencia para verificar tu comprobante.</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="checkout-confirm-btn"
+                            class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 text-ffdark font-gamer font-extrabold text-sm sm:text-base uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-emerald flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-check text-lg"></i> Confirmar Pago
+                    </button>
+                </form>
+
+                <div id="checkout-confirmed-ticket" class="hidden bg-emerald-950/30 border border-emerald-500/50 rounded-2xl p-5 text-center space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-gamer font-bold text-xl text-white">¡Pago Confirmado y Enviado!</h4>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-1">Envía ahora la confirmación directa por WhatsApp:</p>
+                    </div>
+                    <div id="ticket-summary-details" class="bg-ffdark p-3.5 rounded-xl border border-gray-800 text-xs text-left font-mono text-gray-300 space-y-1"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <a id="ticket-wa-1" href="#" target="_blank" rel="noopener noreferrer"
+                           class="py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Comprobante (0414-5047264)
+                        </a>
+                        <a id="ticket-wa-2" href="#" target="_blank" rel="noopener noreferrer"
+                           class="py-3 px-4 rounded-xl bg-ffdark hover:bg-ffcyan/15 text-ffcyan border border-ffcyan/50 font-bold text-xs sm:text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Asesor Línea 1 (0412)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PUBLICAR CUENTA -->
+    <div id="publish-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-ffgold/40 rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative">
+            <div class="sticky top-0 z-20 bg-ffcard/95 backdrop-blur-md px-6 py-5 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-[#f8f6f0] border border-ffgold/60 text-[#12161d] flex items-center justify-center p-1">
+                        <svg viewBox="0 0 120 120" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="51" stroke="currentColor" stroke-width="6.5"/>
+                            <path d="M44 33 L40 21 L51 26.5 L60 16.5 L69 26.5 L80 21 L76 33 Z" fill="currentColor"/>
+                            <path d="M60 31.5C41.5 31.5 31 43.5 31 58.5C31 66.2 34.2 71.5 38.8 74.5C39.8 75.2 40.5 76.2 40.5 77.5V86.5C40.5 91.5 44.5 95 49.5 95H70.5C75.5 95 79.5 91.5 79.5 86.5V77.5C79.5 76.2 80.2 75.2 81.2 74.5C85.8 71.5 89 66.2 89 58.5C89 43.5 78.5 31.5 60 31.5Z" stroke="currentColor" stroke-width="6.2"/>
+                            <ellipse cx="47.2" cy="63" rx="6.2" ry="7.2" transform="rotate(-10 47.2 63)" fill="currentColor"/>
+                            <ellipse cx="72.8" cy="63" rx="6.2" ry="7.2" transform="rotate(10 72.8 63)" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 id="pub-modal-title" class="font-gamer font-bold text-lg sm:text-xl text-white uppercase">Publicar mi Cuenta</h3>
+                        <p id="pub-modal-subtitle" class="text-xs text-ffgold font-semibold">Comisión única de publicación: $2 USD</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closePublishModal()" class="w-9 h-9 rounded-full bg-ffdark hover:bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="publish-form" class="p-6 space-y-5">
+                <input type="hidden" id="pub-is-admin-store" value="false">
+
+                <div id="pub-admin-free-banner" class="hidden bg-ffcyan/10 border border-ffcyan/40 rounded-2xl p-4 flex items-center gap-3">
+                    <i class="fa-solid fa-crown text-ffcyan text-2xl"></i>
+                    <div class="text-xs text-gray-200">
+                        <p class="font-bold text-ffcyan text-sm">Publicación Oficial del Administrador (0% Comisión)</p>
+                        <p>Esta cuenta aparecerá directamente en <strong>"Comprar con el Administrador"</strong> sin pagar comisión.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="sm:col-span-2">
+                        <label for="pub-title" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Título de la Cuenta *</label>
+                        <input type="text" id="pub-title" required maxlength="70" placeholder="Ej. Cuenta Veterana Pase Sakura + AK Dragón" 
+                               class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="pub-price" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Precio de Venta (USD $) *</label>
+                        <div class="relative">
+                            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-ffgold font-bold">$</span>
+                            <input type="number" id="pub-price" required min="1" max="10000" step="1" placeholder="80" 
+                                   class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl pl-8 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label for="pub-level" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Nivel *</label>
+                        <input type="number" id="pub-level" required min="1" max="100" placeholder="Ej. 72" 
+                               class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="pub-rank" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Rango Actual *</label>
+                        <select id="pub-rank" required class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            <option value="Heroico">Heroico</option>
+                            <option value="Gran Maestro">Gran Maestro</option>
+                            <option value="Maestro">Maestro</option>
+                            <option value="Diamante">Diamante</option>
+                            <option value="Platino">Platino</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="pub-region" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Región *</label>
+                        <select id="pub-region" required class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            <option value="EE.UU.">EE.UU.</option>
+                            <option value="Sudamérica">Sudamérica</option>
+                            <option value="Norteamérica">Norteamérica</option>
+                            <option value="Europa">Europa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label for="pub-passes" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Pases Élites *</label>
+                        <input type="number" id="pub-passes" required min="0" max="150" placeholder="Ej. 18" 
+                               class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="pub-bind" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Vinculación *</label>
+                        <select id="pub-bind" required class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            <option value="Facebook">Facebook</option>
+                            <option value="Google">Google</option>
+                            <option value="VK">VK</option>
+                            <option value="Twitter">Twitter</option>
+                        </select>
+                    </div>
+                    <div id="pub-whatsapp-wrapper">
+                        <label for="pub-whatsapp" class="block text-xs font-tech font-bold text-emerald-400 uppercase tracking-wider mb-1.5">WhatsApp Personal *</label>
+                        <input type="tel" id="pub-whatsapp" required placeholder="Ej. +58 412-0000000" 
+                               class="w-full bg-ffdark border border-emerald-500/40 focus:border-emerald-400 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="pub-evos" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Armas Evolutivas / Skins (separadas por coma) *</label>
+                    <input type="text" id="pub-evos" required placeholder="Ej. AK47 Dragón Nvl 7, MP40 Cobra Nvl 6" 
+                           class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="pub-desc" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Detalles del Inventario *</label>
+                    <textarea id="pub-desc" required rows="2" placeholder="Describe emotes, puños, paredes gloo, pantalones angelicales..." 
+                              class="w-full bg-ffdark border border-gray-700 focus:border-ffgold rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none"></textarea>
+                </div>
+
+                <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-3">
+                    <label class="block text-xs font-tech font-bold text-ffcyan uppercase tracking-wider">
+                        <i class="fa-solid fa-camera mr-1"></i> Fotos de tu Cuenta (Opcional)
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label for="pub-main-photo-file" class="block text-[11px] font-semibold text-gray-300 mb-1">Foto Principal</label>
+                            <input type="file" id="pub-main-photo-file" accept="image/*" onchange="handleAccountPhotosUpload(this, 'main')"
+                                   class="w-full text-xs text-gray-300 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-ffcyan file:text-ffdark cursor-pointer bg-ffcard border border-gray-700 rounded-xl p-1.5">
+                        </div>
+                        <div>
+                            <label for="pub-gallery-photo-files" class="block text-[11px] font-semibold text-gray-300 mb-1">Fotos Adicionales (Hasta 2)</label>
+                            <input type="file" id="pub-gallery-photo-files" accept="image/*" multiple onchange="handleAccountPhotosUpload(this, 'gallery')"
+                                   class="w-full text-xs text-gray-300 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-ffgold file:text-ffdark cursor-pointer bg-ffcard border border-gray-700 rounded-xl p-1.5">
+                        </div>
+                    </div>
+                    <div id="pub-uploaded-photos-preview" class="hidden grid-cols-3 gap-2 pt-1"></div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="banner-theme" value="gold" checked class="peer sr-only">
+                            <div class="p-2 rounded-xl border border-gray-700 peer-checked:border-ffgold bg-gradient-to-br from-amber-600/30 to-orange-950/60 text-center text-xs font-bold text-ffgold">Dorado VIP</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="banner-theme" value="cyan" class="peer sr-only">
+                            <div class="p-2 rounded-xl border border-gray-700 peer-checked:border-ffcyan bg-gradient-to-br from-cyan-600/30 to-blue-950/60 text-center text-xs font-bold text-ffcyan">Neón Ciber</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="banner-theme" value="crimson" class="peer sr-only">
+                            <div class="p-2 rounded-xl border border-gray-700 peer-checked:border-rose-500 bg-gradient-to-br from-rose-600/30 to-red-950/60 text-center text-xs font-bold text-rose-400">Cobra Fuego</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="banner-theme" value="emerald" class="peer sr-only">
+                            <div class="p-2 rounded-xl border border-gray-700 peer-checked:border-emerald-500 bg-gradient-to-br from-emerald-600/30 to-teal-950/60 text-center text-xs font-bold text-emerald-400">Booyah Verde</div>
+                        </label>
+                    </div>
+                    <input type="url" id="pub-image-url" placeholder="O pega aquí una URL de imagen externa (Opcional)" 
+                           class="w-full bg-ffcard border border-gray-700 focus:border-ffcyan rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none">
+                </div>
+
+                <!-- Comisión Comunitaria -->
+                <div id="pub-commission-section" class="bg-gradient-to-br from-amber-950/30 via-ffdark to-ffdark p-4 sm:p-5 rounded-2xl border border-ffgold/50 space-y-4">
+                    <div class="flex items-start justify-between gap-2">
+                        <div>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-tech font-bold uppercase tracking-wider text-ffgold">
+                                <i class="fa-solid fa-coins"></i> Comisión por Publicar: <span id="pub-commission-label">$2 USD</span>
+                            </span>
+                            <p class="text-xs text-gray-300 mt-1">Realiza el Pago Móvil, copia los datos abajo y adjunta tu captura + referencia.</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-xl bg-ffgold text-ffdark font-gamer font-extrabold text-sm shrink-0" id="pub-commission-badge">$2 USD</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-ffcard p-3 rounded-xl border border-gray-800 text-xs">
+                        <div>
+                            <span class="block text-[10px] text-gray-400 uppercase">Banco</span>
+                            <span class="font-bold text-white pm-field-bank">Banco de los Trabajadores (0175)</span>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] text-gray-400 uppercase">Número de tlf</span>
+                            <span class="font-mono font-bold text-ffcyan pm-field-phone">0414-5047264</span>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] text-gray-400 uppercase">Cédula</span>
+                            <span class="font-mono font-bold text-white pm-field-id">10639201</span>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="copyPagoMovilData('publish')" id="copy-pm-publish-btn"
+                            class="w-full py-2.5 px-4 rounded-xl bg-ffgold/15 hover:bg-ffgold text-ffgold hover:text-ffdark border border-ffgold/50 font-bold text-xs transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-copy"></i> <span>Copiar todos los datos</span>
+                    </button>
+
+                    <div class="space-y-2">
+                        <label for="pub-fee-screenshot" class="block text-xs font-tech font-bold text-gray-200 uppercase tracking-wider">
+                            Captura del Pago de Comisión *
+                        </label>
+                        <input type="file" id="pub-fee-screenshot" accept="image/*" onchange="handleScreenshotPreview(this, 'pub-preview-box', 'pub-preview-img')"
+                               class="w-full text-xs text-gray-300 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-ffgold file:text-ffdark cursor-pointer bg-ffcard border border-gray-700 rounded-xl p-1.5">
+                        <div id="pub-preview-box" class="hidden rounded-xl overflow-hidden border border-emerald-500/40 bg-black/50 p-2 text-center">
+                            <img id="pub-preview-img" src="" alt="Comprobante comisión" class="max-h-32 mx-auto rounded-lg object-contain">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="pub-fee-ref" class="block text-xs font-tech font-bold text-gray-200 uppercase tracking-wider mb-1">
+                            Verificador • Referencia Pago Móvil (4 a 12 dígitos) *
+                        </label>
+                        <input type="text" id="pub-fee-ref" minlength="4" maxlength="12" placeholder="Ej. 938472"
+                               class="w-full bg-ffcard border border-gray-700 focus:border-ffgold rounded-xl px-3.5 py-2 text-sm font-mono text-white placeholder-gray-500 focus:outline-none">
+                    </div>
+                </div>
+
+                <button type="submit" id="publish-submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-ffgold to-fforange text-ffdark font-gamer font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-gold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rocket"></i> <span id="publish-submit-label">Confirmar Pago ($2) y Publicar Cuenta</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL LOGIN ADMIN (CLAVE 0920) -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-ffcyan/40 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative">
+            <div class="bg-ffcard/95 px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-ffcyan/15 text-ffcyan flex items-center justify-center">
+                        <i class="fa-solid fa-user-shield text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-gamer font-bold text-base sm:text-lg text-white uppercase">Acceso Administrador</h3>
+                        <p class="text-xs text-gray-400">Ingresa la clave para editar precios y gestionar</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeAdminLoginModal()" class="w-9 h-9 rounded-full bg-ffdark hover:bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-5">
+                <form id="admin-login-form" class="space-y-4">
+                    <div>
+                        <label for="admin-pin-input" class="block text-xs font-tech font-bold text-gray-300 uppercase tracking-wider mb-1.5">Clave de Seguridad *</label>
+                        <input type="password" id="admin-pin-input" required inputmode="numeric" placeholder="Ingresa la clave..."
+                               class="w-full bg-ffdark border border-gray-700 focus:border-ffcyan rounded-xl px-4 py-3 text-center font-mono text-lg tracking-widest text-white placeholder-gray-500 focus:outline-none">
+                    </div>
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark font-gamer font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-cyan">
+                        Entrar al Panel Admin
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL COMPLETO DE ADMINISTRADOR -->
+    <div id="admin-dashboard-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-ffcyan/50 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative">
+            <div class="sticky top-0 z-20 bg-ffcard/95 backdrop-blur-md px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-ffcyan/20 text-ffcyan flex items-center justify-center">
+                        <i class="fa-solid fa-sliders text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-gamer font-bold text-base sm:text-xl text-white uppercase">Panel de Control • Administrador</h3>
+                        <p class="text-xs text-emerald-400 font-semibold">Sesión activa • Cambia precios de cuentas, recargas y datos</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="logoutAdmin()" class="px-3 py-1.5 rounded-xl bg-rose-500/15 hover:bg-rose-600 text-rose-400 hover:text-white border border-rose-500/40 text-xs font-bold transition-colors">
+                        Salir
+                    </button>
+                    <button type="button" onclick="closeAdminDashboardModal()" class="w-9 h-9 rounded-full bg-ffdark hover:bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-5 sm:p-6 space-y-6">
+                <div class="grid grid-cols-3 gap-2 bg-ffdark p-1.5 rounded-2xl border border-gray-800">
+                    <button type="button" id="adm-subtab-accounts" onclick="switchAdminSubtab('accounts')"
+                            class="py-2.5 px-3 rounded-xl font-gamer font-bold text-xs uppercase bg-ffcyan text-ffdark transition-all">
+                        Precios de Cuentas
+                    </button>
+                    <button type="button" id="adm-subtab-topups" onclick="switchAdminSubtab('topups')"
+                            class="py-2.5 px-3 rounded-xl font-gamer font-bold text-xs uppercase text-gray-300 hover:text-white transition-all">
+                        Recargas FF & Roblox
+                    </button>
+                    <button type="button" id="adm-subtab-settings" onclick="switchAdminSubtab('settings')"
+                            class="py-2.5 px-3 rounded-xl font-gamer font-bold text-xs uppercase text-gray-300 hover:text-white transition-all">
+                        Pago Móvil & Comisión
+                    </button>
+                </div>
+
+                <!-- Subpestaña 1: Editar Precios y Cuentas -->
+                <div id="adm-panel-accounts" class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-gamer font-bold text-sm sm:text-base text-white uppercase">Cuentas Publicadas (Editar Precio o Borrar)</h4>
+                        <button type="button" onclick="closeAdminDashboardModal(); openPublishModal(true);" class="px-3.5 py-2 rounded-xl bg-ffcyan text-ffdark font-bold text-xs">
+                            + Nueva Cuenta Oficial
+                        </button>
+                    </div>
+                    <div id="adm-accounts-list" class="space-y-3"></div>
+                </div>
+
+                <!-- Subpestaña 2: Editar Precios de Recargas Free Fire & Roblox -->
+                <div id="adm-panel-topups" class="hidden space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h4 class="font-gamer font-bold text-sm sm:text-base text-white uppercase">Paquetes y Precios de Recargas</h4>
+                        <div class="flex gap-2">
+                            <select id="adm-topup-game-select" class="bg-ffdark border border-gray-700 rounded-xl px-3 py-1.5 text-xs text-white">
+                                <option value="freefire">Free Fire (Diamantes)</option>
+                                <option value="roblox">Roblox (Robux)</option>
+                            </select>
+                            <input type="text" id="adm-new-pkg-amount" placeholder="Ej. 100 Diamantes" class="bg-ffdark border border-gray-700 rounded-xl px-3 py-1.5 text-xs text-white w-36">
+                            <input type="number" id="adm-new-pkg-price" step="0.01" min="0.1" placeholder="$ USD" class="bg-ffdark border border-gray-700 rounded-xl px-3 py-1.5 text-xs text-white w-24">
+                            <button type="button" onclick="addTopupPackageAdmin()" class="px-3 py-1.5 rounded-xl bg-emerald-500 text-ffdark font-bold text-xs">
+                                + Agregar
+                            </button>
+                        </div>
+                    </div>
+                    <div id="adm-topup-packages-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                </div>
+
+                <!-- Subpestaña 3: Pago Móvil y Comisión -->
+                <div id="adm-panel-settings" class="hidden space-y-4">
+                    <h4 class="font-gamer font-bold text-sm sm:text-base text-white uppercase">Configuración de Pago Móvil y Comisión</h4>
+                    <form id="adm-settings-form" class="bg-ffdark p-5 rounded-2xl border border-gray-800 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-tech font-bold text-gray-400 uppercase mb-1">Banco</label>
+                                <input type="text" id="adm-pm-bank" required class="w-full bg-ffcard border border-gray-700 rounded-xl px-3.5 py-2.5 text-sm text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-tech font-bold text-gray-400 uppercase mb-1">Número de Teléfono</label>
+                                <input type="text" id="adm-pm-phone" required class="w-full bg-ffcard border border-gray-700 rounded-xl px-3.5 py-2.5 text-sm font-mono text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-tech font-bold text-gray-400 uppercase mb-1">Cédula</label>
+                                <input type="text" id="adm-pm-id" required class="w-full bg-ffcard border border-gray-700 rounded-xl px-3.5 py-2.5 text-sm font-mono text-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-tech font-bold text-ffgold uppercase mb-1">Comisión Publicación Comunidad ($ USD)</label>
+                                <input type="number" id="adm-fee-usd" required min="0" max="500" step="0.5" class="w-full bg-ffcard border border-gray-700 rounded-xl px-3.5 py-2.5 text-sm font-mono text-ffgold">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark font-gamer font-bold text-sm uppercase">
+                            Guardar Cambios
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMACIÓN POST-PUBLICACIÓN -->
+    <div id="published-success-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-emerald-500/40 rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-gamer font-bold text-2xl text-white mb-2">¡Cuenta Publicada!</h3>
+            <p class="text-gray-400 text-sm mb-6">Tu cuenta ya está visible en el catálogo. Puedes borrarla o cambiarle el precio cuando desees.</p>
+            <div class="space-y-2.5">
+                <a id="notify-admin1-wa-link" href="#" target="_blank" rel="noopener noreferrer" 
+                   class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold text-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Notificar Línea 1 (+58 0412-5598221)
+                </a>
+                <a id="notify-admin2-wa-link" href="#" target="_blank" rel="noopener noreferrer" 
+                   class="w-full py-3.5 rounded-xl bg-ffdark hover:bg-ffcyan/15 text-ffcyan border border-ffcyan/40 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Notificar Línea 2 (+58 416-1591048)
+                </a>
+                <button type="button" onclick="closeSuccessModal()" class="w-full py-3 rounded-xl bg-ffsurface hover:bg-gray-800 text-gray-300 border border-gray-700 font-semibold text-sm transition-colors mt-1">
+                    Ver cuenta en el catálogo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DETALLES DE CUENTA -->
+    <div id="account-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-gray-700 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
+            <button type="button" onclick="closeModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-ffdark/90 hover:bg-gray-800 text-gray-300 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMACIÓN BORRAR / VENDER -->
+    <div id="confirm-action-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="bg-ffcard border border-gray-700 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl">
+            <div class="w-14 h-14 rounded-2xl bg-ffgold/15 text-ffgold flex items-center justify-center text-2xl mx-auto mb-4">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="confirm-modal-title" class="font-gamer font-bold text-xl text-white mb-2">Confirmar Acción</h3>
+            <p id="confirm-modal-text" class="text-gray-400 text-sm mb-6">¿Estás seguro de continuar?</p>
+            <div class="flex gap-3">
+                <button type="button" onclick="closeConfirmModal()" class="flex-1 py-3 rounded-xl bg-ffdark hover:bg-gray-800 text-gray-300 border border-gray-700 font-semibold text-sm">
+                    Cancelar
+                </button>
+                <button type="button" id="confirm-modal-btn" class="flex-1 py-3 rounded-xl bg-rose-600 text-white font-bold text-sm hover:opacity-90">
+                    Confirmar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-notification" class="fixed top-24 right-4 z-50 hidden items-center gap-3 bg-ffcard border border-ffcyan text-white px-5 py-3.5 rounded-xl shadow-neon-cyan text-sm font-medium">
+        <i class="fa-solid fa-circle-check text-ffcyan text-lg"></i>
+        <span id="toast-message">Acción completada</span>
+    </div>
+
+    <script>
+        const ADMIN_WHATSAPP_1 = "584125598221";
+        const ADMIN_WHATSAPP_2 = "584161591048";
+        const ADMIN_PAGO_MOVIL_WA = "584145047264";
+        const ADMIN_SECRET_KEY = "0920";
+
+        const STORAGE_ACCOUNTS_KEY = "darkcode_v3_accounts";
+        const STORAGE_TOPUPS_KEY = "darkcode_v3_topups";
+        const STORAGE_SETTINGS_KEY = "darkcode_v3_settings";
+        const STORAGE_MY_IDS_KEY = "darkcode_v3_my_ids";
+
+        let pagoMovilData = {
+            bank: "Banco de los Trabajadores (0175)",
+            phone: "0414-5047264",
+            id: "10639201",
+            publishFeeUsd: 2
+        };
+
+        let topupCatalog = {
+            freefire: {
+                name: "Free Fire",
+                currency: "Diamantes",
+                icon: "fa-gem",
+                accent: "text-ffcyan",
+                idLabel: "ID de Jugador Free Fire *",
+                idPlaceholder: "Ej. 2481940215",
+                packages: [
+                    { id: "ff_100", amount: "100 + 10 Diamantes", price: 1.20, tag: "Básico" },
+                    { id: "ff_310", amount: "310 + 31 Diamantes", price: 3.50, tag: "Popular" },
+                    { id: "ff_520", amount: "520 + 52 Diamantes", price: 5.50, tag: "Recomendado" },
+                    { id: "ff_1060", amount: "1,060 + 106 Diamantes", price: 10.80, tag: "Pase / Evo" },
+                    { id: "ff_2180", amount: "2,180 + 218 Diamantes", price: 21.50, tag: "Pro" },
+                    { id: "ff_5600", amount: "5,600 + 560 Diamantes", price: 52.00, tag: "VIP Máximo" }
+                ]
+            },
+            roblox: {
+                name: "Roblox",
+                currency: "Robux",
+                icon: "fa-cube",
+                accent: "text-ffgold",
+                idLabel: "Usuario de Roblox (@username) *",
+                idPlaceholder: "Ej. DarkGamer_VE",
+                packages: [
+                    { id: "rbx_80", amount: "80 Robux", price: 1.30, tag: "Inicial" },
+                    { id: "rbx_400", amount: "400 Robux", price: 5.50, tag: "Popular" },
+                    { id: "rbx_800", amount: "800 Robux", price: 10.50, tag: "Recomendado" },
+                    { id: "rbx_1700", amount: "1,700 Robux", price: 21.00, tag: "Avanzado" },
+                    { id: "rbx_4500", amount: "4,500 Robux", price: 52.00, tag: "Pro" },
+                    { id: "rbx_10000", amount: "10,000 Robux", price: 105.00, tag: "VIP Máximo" }
+                ]
+            }
+        };
+
+        const defaultDemoAccounts = [
+            {
+                docId: "demo-comm-1",
+                code: "DK8412",
+                title: "Cuenta Veterana Pase Sakura + AK47 Dragón",
+                price: 75,
+                level: 71,
+                rank: "Heroico",
+                region: "EE.UU.",
+                elitePasses: 22,
+                bind: "Facebook",
+                sellerWhatsapp: "+58 412-5598221",
+                evos: ["AK47 Dragón Flama Azul Nvl 7", "MP40 Cobra Nvl 6", "Pantalón Angelical"],
+                description: "Cuenta muy cuidada, cambio de nombre disponible, emotes veteranos y paredes gloo exclusivas.",
+                imageUrl: "",
+                photoBase64: "",
+                galleryPhotos: [],
+                bannerTheme: "gold",
+                isAdminStore: false,
+                status: "available",
+                ownerId: "local-demo",
+                createdAt: Date.now() - 10000
+            },
+            {
+                docId: "demo-admin-1",
+                code: "OF9920",
+                title: "Cuenta Oficial Admin • M1014 Evolutiva + Criminal",
+                price: 110,
+                level: 76,
+                rank: "Gran Maestro",
+                region: "Sudamérica",
+                elitePasses: 30,
+                bind: "Google",
+                sellerWhatsapp: "",
+                evos: ["M1014 Apocalipsis Nvl 7", "SCAR Megalodón Nvl 6", "Puño Ardiente"],
+                description: "Entrega directa con el Administrador tras confirmar el Pago Móvil.",
+                imageUrl: "",
+                photoBase64: "",
+                galleryPhotos: [],
+                bannerTheme: "cyan",
+                isAdminStore: true,
+                status: "available",
+                ownerId: "admin-demo",
+                createdAt: Date.now() - 5000
+            }
+        ];
+
+        let isAdminAuthenticated = false;
+        let activeCatalogTab = 'community';
+        let allAccounts = [];
+        let selectedCheckoutAccount = null;
+        let pendingConfirmAction = null;
+        let uploadedMainPhotoBase64 = "";
+        let uploadedGalleryPhotosBase64 = [];
+        let selectedTopupGameKey = null;
+        let selectedTopupPackage = null;
+
+        const accountsGrid = document.getElementById('accounts-grid');
+        const emptyCatalogState = document.getElementById('empty-catalog-state');
+        const emptyFilterState = document.getElementById('empty-filter-state');
+        const accountCount = document.getElementById('account-count');
+        const statLiveCount = document.getElementById('stat-live-count');
+        const searchInput = document.getElementById('search-input');
+        const rankFilter = document.getElementById('rank-filter');
+        const regionFilter = document.getElementById('region-filter');
+
+        const bannerThemes = {
+            gold: { gradient: "from-amber-600/35 via-orange-950/65 to-ffcard", icon: "fa-crown", accent: "text-ffgold" },
+            cyan: { gradient: "from-cyan-600/35 via-blue-950/65 to-ffcard", icon: "fa-dragon", accent: "text-ffcyan" },
+            crimson: { gradient: "from-rose-600/35 via-red-950/65 to-ffcard", icon: "fa-fire", accent: "text-rose-400" },
+            emerald: { gradient: "from-emerald-600/35 via-teal-950/65 to-ffcard", icon: "fa-bolt", accent: "text-emerald-400" }
+        };
+
+        const rankBadges = {
+            "Gran Maestro": { color: "text-red-400 border-red-500/40 bg-red-500/10", icon: "fa-crown" },
+            "Heroico": { color: "text-ffgold border-ffgold/40 bg-ffgold/10", icon: "fa-shield-halved" },
+            "Maestro": { color: "text-purple-400 border-purple-500/40 bg-purple-500/10", icon: "fa-gem" },
+            "Diamante": { color: "text-sky-400 border-sky-500/40 bg-sky-500/10", icon: "fa-diamond" },
+            "Platino": { color: "text-teal-400 border-teal-500/40 bg-teal-500/10", icon: "fa-medal" }
+        };
+
+        function escapeHTML(str) {
+            if (typeof str !== 'string') return String(str ?? '');
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function loadStateFromStorage() {
+            try {
+                const savedSettings = localStorage.getItem(STORAGE_SETTINGS_KEY);
+                if (savedSettings) {
+                    pagoMovilData = { ...pagoMovilData, ...JSON.parse(savedSettings) };
+                }
+                const savedTopups = localStorage.getItem(STORAGE_TOPUPS_KEY);
+                if (savedTopups) {
+                    const parsedTopups = JSON.parse(savedTopups);
+                    if (parsedTopups.freefire) topupCatalog.freefire.packages = parsedTopups.freefire;
+                    if (parsedTopups.roblox) topupCatalog.roblox.packages = parsedTopups.roblox;
+                }
+                const savedAccounts = localStorage.getItem(STORAGE_ACCOUNTS_KEY);
+                if (savedAccounts) {
+                    allAccounts = JSON.parse(savedAccounts);
+                } else {
+                    allAccounts = [...defaultDemoAccounts];
+                    saveAccountsToStorage();
+                }
+            } catch (e) {
+                allAccounts = [...defaultDemoAccounts];
+            }
+        }
+
+        function saveAccountsToStorage() {
+            try {
+                localStorage.setItem(STORAGE_ACCOUNTS_KEY, JSON.stringify(allAccounts));
+            } catch (e) {
+                console.warn("Storage limit:", e);
+            }
+        }
+
+        function saveTopupsToStorage() {
+            try {
+                localStorage.setItem(STORAGE_TOPUPS_KEY, JSON.stringify({
+                    freefire: topupCatalog.freefire.packages,
+                    roblox: topupCatalog.roblox.packages
+                }));
+            } catch (e) {}
+        }
+
+        function saveSettingsToStorage() {
+            try {
+                localStorage.setItem(STORAGE_SETTINGS_KEY, JSON.stringify(pagoMovilData));
+            } catch (e) {}
+        }
+
+        function getMyPublishedIds() {
+            try {
+                const raw = localStorage.getItem(STORAGE_MY_IDS_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveMyPublishedId(docId) {
+            const list = getMyPublishedIds();
+            if (!list.includes(docId)) {
+                list.push(docId);
+                localStorage.setItem(STORAGE_MY_IDS_KEY, JSON.stringify(list));
+            }
+        }
+
+        function removeMyPublishedId(docId) {
+            const list = getMyPublishedIds().filter(id => id !== docId);
+            localStorage.setItem(STORAGE_MY_IDS_KEY, JSON.stringify(list));
+        }
+
+        function isAccountOwner(acc) {
+            if (isAdminAuthenticated) return true;
+            return getMyPublishedIds().includes(acc.docId);
+        }
+
+        function renderPagoMovilAndFeeLabels() {
+            document.querySelectorAll('.pm-field-bank').forEach(el => el.textContent = pagoMovilData.bank);
+            document.querySelectorAll('.pm-field-phone').forEach(el => el.textContent = pagoMovilData.phone);
+            document.querySelectorAll('.pm-field-id').forEach(el => el.textContent = pagoMovilData.id);
+
+            const fee = pagoMovilData.publishFeeUsd;
+            const feeStr = `$${fee} USD`;
+            if (document.getElementById('nav-publish-fee-label')) document.getElementById('nav-publish-fee-label').textContent = `Publicar ($${fee})`;
+            if (document.getElementById('hero-fee-text')) document.getElementById('hero-fee-text').textContent = feeStr;
+            if (document.getElementById('hero-publish-btn-text')) document.getElementById('hero-publish-btn-text').textContent = `Publicar Cuenta (${feeStr})`;
+            if (document.getElementById('stat-fee-usd')) document.getElementById('stat-fee-usd').textContent = feeStr;
+            if (document.getElementById('tag-fee-text')) document.getElementById('tag-fee-text').textContent = feeStr;
+            if (document.getElementById('step1-fee-text')) document.getElementById('step1-fee-text').textContent = feeStr;
+            if (document.getElementById('footer-publish-link')) document.getElementById('footer-publish-link').textContent = `+ Publicar Cuenta (${feeStr})`;
+            if (document.getElementById('pub-commission-label')) document.getElementById('pub-commission-label').textContent = feeStr;
+            if (document.getElementById('pub-commission-badge')) document.getElementById('pub-commission-badge').textContent = feeStr;
+            if (document.getElementById('publish-submit-label')) document.getElementById('publish-submit-label').textContent = `Confirmar Pago ($${fee}) y Publicar Cuenta`;
+            if (activeCatalogTab === 'community' && document.getElementById('header-publish-action-text')) {
+                document.getElementById('header-publish-action-text').textContent = `Publicar mi Cuenta (${feeStr})`;
+            }
+        }
+
+        window.copyPagoMovilData = function(context) {
+            const formattedText =
+                `Banco: ${pagoMovilData.bank}
+` +
+                `Número de tlf: ${pagoMovilData.phone}
+` +
+                `Cédula: ${pagoMovilData.id}`;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(formattedText).catch(() => {});
+            }
+            const textarea = document.createElement('textarea');
+            textarea.value = formattedText;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(textarea);
+
+            showToast("¡Datos copiados!");
+            const btnMap = {
+                publish: 'copy-pm-publish-btn',
+                checkout: 'copy-pm-checkout-btn',
+                topup: 'copy-pm-topup-btn'
+            };
+            const btn = document.getElementById(btnMap[context]);
+            if (btn) {
+                const orig = btn.innerHTML;
+                btn.innerHTML = `<i class="fa-solid fa-check"></i> <span>¡Datos copiados!</span>`;
+                setTimeout(() => { btn.innerHTML = orig; }, 2200);
+            }
+        };
+
+        function formatPhoneForWa(rawPhone) {
+            if (!rawPhone) return '';
+            let digits = String(rawPhone).replace(/\D/g, '');
+            if (digits.startsWith('0') && digits.length === 11) digits = '58' + digits.slice(1);
+            else if (digits.length === 10 && digits.startsWith('4')) digits = '58' + digits;
+            return digits;
+        }
+
+        function buildSellerWhatsAppLink(acc) {
+            const cleanPhone = formatPhoneForWa(acc.sellerWhatsapp);
+            if (!cleanPhone) return '';
+            const shortId = acc.code || acc.docId.slice(0, 6).toUpperCase();
+            const message = `Hola 👋, vi tu cuenta de Free Fire publicada en *DARKCODE* y me interesa hablar personalmente contigo:
+
+` +
+                            `🆔 *Código:* #${shortId}
+` +
+                            `🔥 *Cuenta:* ${acc.title}
+` +
+                            `💵 *Precio:* $${acc.price} USD
+` +
+                            `⭐ *Nivel:* ${acc.level} | *Rango:* ${acc.rank}
+
+` +
+                            `¿Sigue disponible?`;
+            return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+        }
+
+        function buildWhatsAppBuyLink(acc, phoneNumber) {
+            const shortId = acc.code || acc.docId.slice(0, 6).toUpperCase();
+            const originTag = acc.isAdminStore ? "TIENDA OFICIAL ADMIN" : "CATÁLOGO COMUNIDAD";
+            const message = `Hola 👋, me interesa esta cuenta (${originTag}):
+
+` +
+                            `🆔 *Código:* #${shortId}
+` +
+                            `🔥 *Cuenta:* ${acc.title}
+` +
+                            `💵 *Precio:* $${acc.price} USD
+` +
+                            `⭐ *Nivel:* ${acc.level} | *Rango:* ${acc.rank}
+` +
+                            `🌎 *Región:* ${acc.region} | *Vinculación:* ${acc.bind}`;
+            return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        }
+
+        // =========================================================================
+        // PANEL DE ADMINISTRADOR (CLAVE 0920) + CAMBIO DE PRECIOS
+        // =========================================================================
+        window.openAdminPanelModal = function() {
+            if (!isAdminAuthenticated) {
+                document.getElementById('admin-pin-input').value = '';
+                const loginModal = document.getElementById('admin-login-modal');
+                loginModal.classList.remove('hidden');
+                loginModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => document.getElementById('admin-pin-input').focus(), 80);
+                return;
+            }
+            renderAdminDashboardContent();
+            const dash = document.getElementById('admin-dashboard-modal');
+            dash.classList.remove('hidden');
+            dash.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeAdminLoginModal = function() {
+            const loginModal = document.getElementById('admin-login-modal');
+            loginModal.classList.add('hidden');
+            loginModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        window.closeAdminDashboardModal = function() {
+            const dash = document.getElementById('admin-dashboard-modal');
+            dash.classList.add('hidden');
+            dash.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        window.logoutAdmin = function() {
+            isAdminAuthenticated = false;
+            document.getElementById('nav-admin-label').textContent = "Admin";
+            closeAdminDashboardModal();
+            applyFilters();
+            showToast("Sesión de Administrador cerrada.");
+        };
+
+        document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const pin = document.getElementById('admin-pin-input').value.trim();
+            if (pin === ADMIN_SECRET_KEY) {
+                isAdminAuthenticated = true;
+                document.getElementById('nav-admin-label').textContent = "Admin ✓";
+                closeAdminLoginModal();
+                applyFilters();
+                openAdminPanelModal();
+                showToast("¡Bienvenido Administrador! Ya puedes cambiar precios.");
+            } else {
+                showToast("Clave incorrecta (usa 0920).");
+            }
+        });
+
+        window.switchAdminSubtab = function(sub) {
+            ['accounts', 'topups', 'settings'].forEach(key => {
+                document.getElementById(`adm-panel-${key}`).classList.toggle('hidden', key !== sub);
+                const tabBtn = document.getElementById(`adm-subtab-${key}`);
+                if (key === sub) {
+                    tabBtn.className = "py-2.5 px-3 rounded-xl font-gamer font-bold text-xs uppercase bg-ffcyan text-ffdark transition-all";
+                } else {
+                    tabBtn.className = "py-2.5 px-3 rounded-xl font-gamer font-bold text-xs uppercase text-gray-300 hover:text-white transition-all";
+                }
+            });
+            renderAdminDashboardContent();
+        };
+
+        function renderAdminDashboardContent() {
+            // 1. Lista de cuentas para cambiar precio o borrar
+            const listEl = document.getElementById('adm-accounts-list');
+            if (allAccounts.length === 0) {
+                listEl.innerHTML = `<p class="text-sm text-gray-400">No hay cuentas publicadas todavía.</p>`;
+            } else {
+                listEl.innerHTML = allAccounts.map(acc => `
+                    <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="min-w-0">
+                            <span class="text-xs font-mono text-ffcyan font-bold">#${escapeHTML(acc.code || acc.docId)}</span>
+                            <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-bold ${acc.isAdminStore ? 'bg-ffcyan/20 text-ffcyan' : 'bg-ffgold/20 text-ffgold'}">
+                                ${acc.isAdminStore ? 'Oficial Admin' : 'Comunidad'}
+                            </span>
+                            <h5 class="font-gamer font-bold text-sm text-white truncate mt-0.5">${escapeHTML(acc.title)}</h5>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <span class="text-xs text-gray-400 font-bold">$</span>
+                            <input type="number" id="adm-price-input-${acc.docId}" value="${escapeHTML(acc.price)}" min="1" step="1"
+                                   class="w-24 bg-ffcard border border-ffgold/50 rounded-xl px-2.5 py-1.5 text-sm font-mono font-bold text-ffgold">
+                            <button type="button" onclick="saveAccountPriceAdmin('${acc.docId}')"
+                                    class="px-3 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold text-xs">
+                                Guardar Precio
+                            </button>
+                            <button type="button" onclick="promptDeleteAccount('${acc.docId}')"
+                                    class="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 2. Paquetes de Recargas Free Fire & Roblox
+            const topupListEl = document.getElementById('adm-topup-packages-list');
+            topupListEl.innerHTML = ['freefire', 'roblox'].map(gameKey => {
+                const g = topupCatalog[gameKey];
+                return `
+                    <div class="bg-ffdark p-4 rounded-2xl border border-gray-800 space-y-3">
+                        <h5 class="font-gamer font-bold text-sm ${g.accent} uppercase flex items-center gap-2">
+                            <i class="fa-solid ${g.icon}"></i> ${g.name} (${g.currency})
+                        </h5>
+                        <div class="space-y-2">
+                            ${g.packages.map(pkg => `
+                                <div class="flex items-center justify-between gap-2 bg-ffcard p-2.5 rounded-xl border border-gray-800 text-xs">
+                                    <span class="font-semibold text-white truncate">${escapeHTML(pkg.amount)}</span>
+                                    <div class="flex items-center gap-1.5 shrink-0">
+                                        <span class="text-gray-400">$</span>
+                                        <input type="number" id="adm-pkg-price-${gameKey}-${pkg.id}" value="${pkg.price}" step="0.01" min="0.1"
+                                               class="w-20 bg-ffdark border border-gray-700 rounded-lg px-2 py-1 font-mono text-ffgold font-bold">
+                                        <button type="button" onclick="updateTopupPackagePrice('${gameKey}', '${pkg.id}')"
+                                                class="px-2.5 py-1 rounded-lg bg-ffcyan text-ffdark font-bold">OK</button>
+                                        <button type="button" onclick="deleteTopupPackage('${gameKey}', '${pkg.id}')"
+                                                class="px-2 py-1 rounded-lg bg-rose-600/20 text-rose-400 border border-rose-500/40 font-bold">X</button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // 3. Ajustes Pago Móvil y Comisión
+            document.getElementById('adm-pm-bank').value = pagoMovilData.bank;
+            document.getElementById('adm-pm-phone').value = pagoMovilData.phone;
+            document.getElementById('adm-pm-id').value = pagoMovilData.id;
+            document.getElementById('adm-fee-usd').value = pagoMovilData.publishFeeUsd;
+        }
+
+        window.saveAccountPriceAdmin = function(docId) {
+            const input = document.getElementById(`adm-price-input-${docId}`);
+            const newPrice = Number(input?.value);
+            if (!newPrice || newPrice <= 0) {
+                showToast("Ingresa un precio válido mayor a 0.");
+                return;
+            }
+            allAccounts = allAccounts.map(a => a.docId === docId ? { ...a, price: newPrice } : a);
+            saveAccountsToStorage();
+            applyFilters();
+            showToast(`Precio actualizado a $${newPrice} USD.`);
+        };
+
+        window.updateTopupPackagePrice = function(gameKey, pkgId) {
+            const input = document.getElementById(`adm-pkg-price-${gameKey}-${pkgId}`);
+            const val = parseFloat(input?.value);
+            if (!val || val <= 0) {
+                showToast("Precio de recarga inválido.");
+                return;
+            }
+            topupCatalog[gameKey].packages = topupCatalog[gameKey].packages.map(p =>
+                p.id === pkgId ? { ...p, price: Number(val.toFixed(2)) } : p
+            );
+            saveTopupsToStorage();
+            showToast("Precio de recarga actualizado.");
+        };
+
+        window.addTopupPackageAdmin = function() {
+            const gameKey = document.getElementById('adm-topup-game-select').value;
+            const amount = document.getElementById('adm-new-pkg-amount').value.trim();
+            const price = parseFloat(document.getElementById('adm-new-pkg-price').value);
+            if (!amount || !price || price <= 0) {
+                showToast("Escribe el monto y el precio en USD.");
+                return;
+            }
+            topupCatalog[gameKey].packages.push({
+                id: `${gameKey}_${Date.now()}`,
+                amount,
+                price: Number(price.toFixed(2)),
+                tag: "Nuevo"
+            });
+            saveTopupsToStorage();
+            document.getElementById('adm-new-pkg-amount').value = '';
+            document.getElementById('adm-new-pkg-price').value = '';
+            renderAdminDashboardContent();
+            showToast("Paquete de recarga agregado.");
+        };
+
+        window.deleteTopupPackage = function(gameKey, pkgId) {
+            topupCatalog[gameKey].packages = topupCatalog[gameKey].packages.filter(p => p.id !== pkgId);
+            saveTopupsToStorage();
+            renderAdminDashboardContent();
+            showToast("Paquete eliminado.");
+        };
+
+        document.getElementById('adm-settings-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            pagoMovilData.bank = document.getElementById('adm-pm-bank').value.trim();
+            pagoMovilData.phone = document.getElementById('adm-pm-phone').value.trim();
+            pagoMovilData.id = document.getElementById('adm-pm-id').value.trim();
+            pagoMovilData.publishFeeUsd = Number(document.getElementById('adm-fee-usd').value);
+            saveSettingsToStorage();
+            renderPagoMovilAndFeeLabels();
+            showToast("Configuración guardada con éxito.");
+        });
+
+        // =========================================================================
+        // RECARGAS FREE FIRE & ROBLOX
+        // =========================================================================
+        window.openTopupModal = function() {
+            selectedTopupGameKey = null;
+            selectedTopupPackage = null;
+
+            document.getElementById('topup-game-btn-freefire').className = "p-4 rounded-2xl border-2 border-gray-800 bg-ffdark hover:border-ffcyan/60 transition-all text-left flex items-center gap-3 group";
+            document.getElementById('topup-game-btn-roblox').className = "p-4 rounded-2xl border-2 border-gray-800 bg-ffdark hover:border-ffgold/60 transition-all text-left flex items-center gap-3 group";
+
+            document.getElementById('topup-amounts-section').classList.add('hidden');
+            document.getElementById('topup-payment-section').classList.add('hidden');
+            document.getElementById('topup-payment-form').reset();
+            document.getElementById('topup-payment-form').classList.remove('hidden');
+            document.getElementById('topup-confirmed-ticket').classList.add('hidden');
+            document.getElementById('topup-preview-box').classList.add('hidden');
+
+            renderPagoMovilAndFeeLabels();
+            const modal = document.getElementById('topup-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeTopupModal = function() {
+            const modal = document.getElementById('topup-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        window.selectTopupGame = function(gameKey) {
+            selectedTopupGameKey = gameKey;
+            selectedTopupPackage = null;
+
+            const btnFF = document.getElementById('topup-game-btn-freefire');
+            const btnRBX = document.getElementById('topup-game-btn-roblox');
+
+            if (gameKey === 'freefire') {
+                btnFF.className = "p-4 rounded-2xl border-2 border-ffcyan bg-ffcyan/10 shadow-neon-cyan transition-all text-left flex items-center gap-3";
+                btnRBX.className = "p-4 rounded-2xl border-2 border-gray-800 bg-ffdark hover:border-ffgold/60 transition-all text-left flex items-center gap-3 opacity-80 hover:opacity-100";
+            } else {
+                btnRBX.className = "p-4 rounded-2xl border-2 border-ffgold bg-ffgold/10 shadow-neon-gold transition-all text-left flex items-center gap-3";
+                btnFF.className = "p-4 rounded-2xl border-2 border-gray-800 bg-ffdark hover:border-ffcyan/60 transition-all text-left flex items-center gap-3 opacity-80 hover:opacity-100";
+            }
+
+            const gameData = topupCatalog[gameKey];
+            document.getElementById('topup-amounts-label').innerHTML = `2. Elige el monto de <span class="${gameData.accent}">${gameData.currency} (${gameData.name})</span> a recargar:`;
+            document.getElementById('topup-packages-grid').innerHTML = gameData.packages.map(pkg => `
+                <button type="button" id="pkg-btn-${pkg.id}" onclick="selectTopupPackage('${pkg.id}')"
+                        class="p-3.5 rounded-2xl border border-gray-700 bg-ffdark hover:border-ffcyan transition-all text-left flex flex-col justify-between gap-2">
+                    <div class="flex items-center justify-between gap-1">
+                        <span class="px-2 py-0.5 rounded bg-ffsurface text-[10px] font-tech font-bold uppercase text-gray-300">${escapeHTML(pkg.tag)}</span>
+                        <i class="fa-solid ${gameData.icon} ${gameData.accent} text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="block font-gamer font-bold text-xs sm:text-sm text-white leading-snug">${escapeHTML(pkg.amount)}</span>
+                        <span class="block font-mono font-extrabold text-sm text-ffgold mt-1">$${Number(pkg.price).toFixed(2)} USD</span>
+                    </div>
+                </button>
+            `).join('');
+
+            document.getElementById('topup-amounts-section').classList.remove('hidden');
+            document.getElementById('topup-payment-section').classList.add('hidden');
+        };
+
+        window.selectTopupPackage = function(pkgId) {
+            if (!selectedTopupGameKey) return;
+            const gameData = topupCatalog[selectedTopupGameKey];
+            const pkg = gameData.packages.find(p => p.id === pkgId);
+            if (!pkg) return;
+
+            selectedTopupPackage = pkg;
+
+            gameData.packages.forEach(item => {
+                const el = document.getElementById(`pkg-btn-${item.id}`);
+                if (!el) return;
+                if (item.id === pkgId) {
+                    el.className = "p-3.5 rounded-2xl border-2 border-ffcyan bg-ffcyan/15 shadow-neon-cyan transition-all text-left flex flex-col justify-between gap-2";
+                } else {
+                    el.className = "p-3.5 rounded-2xl border border-gray-700 bg-ffdark hover:border-ffcyan transition-all text-left flex flex-col justify-between gap-2 opacity-80";
+                }
+            });
+
+            document.getElementById('topup-selected-pkg-name').textContent = `${gameData.name} • ${pkg.amount}`;
+            document.getElementById('topup-selected-pkg-price').textContent = `$${Number(pkg.price).toFixed(2)} USD`;
+
+            document.getElementById('topup-player-id-label').textContent = gameData.idLabel;
+            document.getElementById('topup-player-id').placeholder = gameData.idPlaceholder;
+
+            document.getElementById('topup-payment-form').classList.remove('hidden');
+            document.getElementById('topup-confirmed-ticket').classList.add('hidden');
+            validateTopupVerifier();
+
+            const paymentSection = document.getElementById('topup-payment-section');
+            paymentSection.classList.remove('hidden');
+            paymentSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        };
+
+        window.validateTopupVerifier = function() {
+            const playerId = document.getElementById('topup-player-id')?.value.trim() || '';
+            const fileInput = document.getElementById('topup-screenshot');
+            const refVal = document.getElementById('topup-ref')?.value.trim() || '';
+            const phoneVal = document.getElementById('topup-buyer-phone')?.value.trim() || '';
+            const badge = document.getElementById('topup-verifier-badge');
+            const statusBox = document.getElementById('topup-verifier-status');
+
+            const hasId = playerId.length >= 2;
+            const hasFile = fileInput && fileInput.files && fileInput.files.length > 0;
+            const isRefValid = /^[0-9]{4,12}$/.test(refVal);
+            const isPhoneValid = phoneVal.length >= 7;
+
+            if (hasId && hasFile && isRefValid && isPhoneValid) {
+                badge.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40";
+                badge.innerHTML = `<i class="fa-solid fa-check-circle mr-1"></i> Listo para Confirmar`;
+                statusBox.className = "p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2.5";
+                statusBox.innerHTML = `<i class="fa-solid fa-shield-check text-emerald-400 text-base"></i> <span>Captura adjunta y referencia <strong>#${escapeHTML(refVal)}</strong> verificadas. Pulsa <strong>Confirmar Pago</strong>.</span>`;
+                return true;
+            } else {
+                badge.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-ffgold/15 text-ffgold border border-ffgold/30";
+                badge.textContent = "Verificación Pendiente";
+                statusBox.className = "p-3 rounded-xl bg-ffcard/80 border border-gray-800 text-xs text-gray-400 flex items-center gap-2.5";
+                const missing = [];
+                if (!hasId) missing.push('ID/Usuario');
+                if (!hasFile) missing.push('Captura');
+                if (!isRefValid) missing.push('Referencia (4-12 dígitos)');
+                if (!isPhoneValid) missing.push('Teléfono');
+                statusBox.innerHTML = `<i class="fa-solid fa-circle-info text-ffcyan"></i> <span>Falta: ${missing.join(', ')}.</span>`;
+                return false;
+            }
+        };
+
+        document.getElementById('topup-payment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!selectedTopupGameKey || !selectedTopupPackage) return;
+            if (!validateTopupVerifier()) {
+                showToast("Completa todos los campos y adjunta la captura.");
+                return;
+            }
+
+            const gameData = topupCatalog[selectedTopupGameKey];
+            const playerId = document.getElementById('topup-player-id').value.trim();
+            const refNumber = document.getElementById('topup-ref').value.trim();
+            const buyerPhone = document.getElementById('topup-buyer-phone').value.trim();
+            const fileName = document.getElementById('topup-screenshot').files[0]?.name || 'captura_recarga.jpg';
+
+            const waTopupMsg = `Hola 👋, acabo de *CONFIRMAR UNA RECARGA* en DARKCODE:
+
+` +
+                               `🎮 *Juego:* ${gameData.name}
+` +
+                               `💎 *Paquete:* ${selectedTopupPackage.amount}
+` +
+                               `🆔 *ID / Usuario:* ${playerId}
+` +
+                               `💵 *Precio:* $${Number(selectedTopupPackage.price).toFixed(2)} USD
+` +
+                               `🧾 *Referencia Pago Móvil:* #${refNumber}
+` +
+                               `📱 *Mi Teléfono:* ${buyerPhone}`;
+
+            document.getElementById('topup-ticket-details').innerHTML = `
+                <div><strong>Juego:</strong> ${escapeHTML(gameData.name)}</div>
+                <div><strong>Paquete:</strong> ${escapeHTML(selectedTopupPackage.amount)}</div>
+                <div><strong>ID / Usuario:</strong> ${escapeHTML(playerId)}</div>
+                <div><strong>Precio:</strong> $${Number(selectedTopupPackage.price).toFixed(2)} USD</div>
+                <div><strong>Referencia Verificada:</strong> #${escapeHTML(refNumber)}</div>
+                <div><strong>Captura:</strong> ${escapeHTML(fileName)}</div>
+            `;
+
+            document.getElementById('topup-wa-1').href = `https://wa.me/${ADMIN_PAGO_MOVIL_WA}?text=${encodeURIComponent(waTopupMsg)}`;
+            document.getElementById('topup-wa-2').href = `https://wa.me/${ADMIN_WHATSAPP_1}?text=${encodeURIComponent(waTopupMsg)}`;
+
+            document.getElementById('topup-payment-form').classList.add('hidden');
+            document.getElementById('topup-confirmed-ticket').classList.remove('hidden');
+            showToast("¡Recarga confirmada! Envía tu comprobante por WhatsApp.");
+        });
+
+        // =========================================================================
+        // CATÁLOGO Y TARJETAS
+        // =========================================================================
+        window.switchCatalogTab = function(tab) {
+            activeCatalogTab = tab;
+
+            const tabAdmin = document.getElementById('tab-admin-store');
+            const tabComm = document.getElementById('tab-community-store');
+            const sectionTag = document.getElementById('section-tag-badge');
+            const sectionTitle = document.getElementById('section-main-title');
+            const sectionDesc = document.getElementById('section-sub-desc');
+            const actionBtn = document.getElementById('header-publish-action-btn');
+            const actionText = document.getElementById('header-publish-action-text');
+
+            if (tab === 'admin') {
+                tabAdmin.className = "py-4 px-5 rounded-xl font-gamer font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2.5 bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark shadow-neon-cyan";
+                tabComm.className = "py-4 px-5 rounded-xl font-gamer font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2.5 bg-ffdark text-gray-300 hover:text-white border border-gray-800";
+
+                sectionTag.className = "inline-flex items-center gap-2 text-xs font-tech font-bold uppercase tracking-widest text-ffcyan mb-1";
+                sectionTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-ffcyan animate-pulse"></span> Stock Oficial Verificado • Pago Móvil Directo`;
+                sectionTitle.innerHTML = `Comprar con el <span class="text-ffcyan">Administrador</span>`;
+                sectionDesc.textContent = "Cuentas oficiales vendidas directamente aquí. Pulsa Comprar Cuenta para ver los datos de Pago Móvil y confirmar tu pago.";
+
+                actionBtn.className = "px-5 py-2.5 rounded-xl bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark font-bold text-sm hover:brightness-110 transition-all shadow-neon-cyan flex items-center gap-2";
+                actionText.textContent = "Publicar Cuenta Oficial";
+            } else {
+                tabComm.className = "py-4 px-5 rounded-xl font-gamer font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2.5 bg-gradient-to-r from-ffgold to-fforange text-ffdark shadow-neon-gold";
+                tabAdmin.className = "py-4 px-5 rounded-xl font-gamer font-bold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2.5 bg-ffdark text-gray-300 hover:text-white border border-gray-800";
+
+                sectionTag.className = "inline-flex items-center gap-2 text-xs font-tech font-bold uppercase tracking-widest text-ffgold mb-1";
+                sectionTag.innerHTML = `<span class="w-2 h-2 rounded-full bg-ffgold animate-pulse"></span> Catálogo Comunitario • Comisión de Publicación <span id="tag-fee-text">$${pagoMovilData.publishFeeUsd} USD</span>`;
+                sectionTitle.innerHTML = `Catálogo <span class="text-ffgold">Comunidad</span>`;
+                sectionDesc.textContent = "Cuentas publicadas por jugadores con fotos reales y contacto directo de WhatsApp para hablar con el vendedor.";
+
+                actionBtn.className = "px-5 py-2.5 rounded-xl bg-gradient-to-r from-ffgold to-fforange text-ffdark font-bold text-sm hover:brightness-110 transition-all shadow-neon-gold flex items-center gap-2";
+                actionText.textContent = `Publicar mi Cuenta ($${pagoMovilData.publishFeeUsd} USD)`;
+            }
+
+            applyFilters();
+        };
+
+        window.handleContextualPublishClick = function() {
+            openPublishModal(activeCatalogTab === 'admin');
+        };
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+            const selectedRank = rankFilter.value;
+            const selectedRegion = regionFilter.value;
+
+            const adminAccounts = allAccounts.filter(a => a.isAdminStore === true);
+            const communityAccounts = allAccounts.filter(a => a.isAdminStore !== true);
+
+            document.getElementById('badge-admin-count').textContent = adminAccounts.filter(a => a.status !== 'sold').length;
+            document.getElementById('badge-community-count').textContent = communityAccounts.filter(a => a.status !== 'sold').length;
+            statLiveCount.textContent = allAccounts.length;
+
+            const currentTabAccounts = activeCatalogTab === 'admin' ? adminAccounts : communityAccounts;
+            accountCount.textContent = currentTabAccounts.filter(a => a.status !== 'sold').length;
+
+            if (currentTabAccounts.length === 0) {
+                accountsGrid.classList.add('hidden');
+                emptyFilterState.classList.add('hidden');
+                renderEmptyTabState();
+                emptyCatalogState.classList.remove('hidden');
+                return;
+            }
+
+            emptyCatalogState.classList.add('hidden');
+
+            const filtered = currentTabAccounts.filter(acc => {
+                const evosText = Array.isArray(acc.evos) ? acc.evos.join(' ').toLowerCase() : '';
+                const matchesSearch = !query ||
+                    (acc.title && acc.title.toLowerCase().includes(query)) ||
+                    (acc.code && acc.code.toLowerCase().includes(query)) ||
+                    (acc.description && acc.description.toLowerCase().includes(query)) ||
+                    evosText.includes(query);
+                const matchesRank = selectedRank === 'all' || acc.rank === selectedRank;
+                const matchesRegion = selectedRegion === 'all' || acc.region === selectedRegion;
+                return matchesSearch && matchesRank && matchesRegion;
+            });
+
+            if (filtered.length === 0) {
+                accountsGrid.classList.add('hidden');
+                emptyFilterState.classList.remove('hidden');
+            } else {
+                emptyFilterState.classList.add('hidden');
+                accountsGrid.classList.remove('hidden');
+                accountsGrid.classList.add('grid');
+                renderAccountCards(filtered);
+            }
+        }
+
+        function renderEmptyTabState() {
+            const titleEl = document.getElementById('empty-title');
+            const descEl = document.getElementById('empty-desc');
+            const actionsEl = document.getElementById('empty-actions');
+
+            if (activeCatalogTab === 'admin') {
+                titleEl.textContent = "No hay cuentas oficiales disponibles";
+                descEl.textContent = "En esta sección se publican las cuentas oficiales para compra directa por Pago Móvil.";
+                actionsEl.innerHTML = `
+                    <button type="button" onclick="openPublishModal(true)" class="px-8 py-4 rounded-xl bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark font-gamer font-bold text-sm uppercase tracking-wider shadow-neon-cyan">
+                        <i class="fa-solid fa-plus-circle mr-1"></i> Publicar Cuenta Oficial
+                    </button>`;
+            } else {
+                titleEl.textContent = "El catálogo comunitario está listo";
+                descEl.textContent = "Publica las fotos, información y tu número de WhatsApp para hablar directamente con compradores.";
+                actionsEl.innerHTML = `
+                    <button type="button" onclick="openPublishModal(false)" class="px-8 py-4 rounded-xl bg-gradient-to-r from-ffgold to-fforange text-ffdark font-gamer font-bold text-sm uppercase tracking-wider shadow-neon-gold">
+                        <i class="fa-solid fa-plus-circle mr-1"></i> Publicar Cuenta ($${pagoMovilData.publishFeeUsd} USD)
+                    </button>`;
+            }
+        }
+
+        function renderAccountCards(list) {
+            accountsGrid.innerHTML = '';
+
+            list.forEach(acc => {
+                const theme = bannerThemes[acc.bannerTheme] || bannerThemes.gold;
+                const rBadge = rankBadges[acc.rank] || rankBadges["Heroico"];
+                const shortId = escapeHTML(acc.code || acc.docId.slice(0, 6).toUpperCase());
+                const isSold = acc.status === 'sold';
+                const isAdminItem = acc.isAdminStore === true;
+                const canManage = isAccountOwner(acc);
+                const evosList = Array.isArray(acc.evos) ? acc.evos : [];
+                const sellerWaLink = !isAdminItem ? buildSellerWhatsAppLink(acc) : '';
+
+                const card = document.createElement('div');
+                card.className = `bg-ffcard rounded-2xl border ${isSold ? 'border-gray-800 opacity-75' : (isAdminItem ? 'border-ffcyan/40 hover:border-ffcyan hover:shadow-neon-cyan' : 'border-gray-800 hover:border-ffgold/70 hover:shadow-neon-gold')} transition-all duration-300 flex flex-col justify-between overflow-hidden group`;
+
+                const primaryPhoto = acc.photoBase64 || acc.imageUrl;
+                const hasCustomImg = primaryPhoto && (primaryPhoto.startsWith('http') || primaryPhoto.startsWith('data:image/'));
+                const headerBgHtml = hasCustomImg
+                    ? `<img src="${escapeHTML(primaryPhoto)}" alt="${escapeHTML(acc.title)}" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-500">
+                       <div class="absolute inset-0 bg-gradient-to-t from-ffcard via-ffcard/65 to-black/35"></div>`
+                    : `<div class="absolute inset-0 bg-gradient-to-br ${theme.gradient}"></div>`;
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 p-5 flex flex-col justify-between border-b border-gray-800/80 overflow-hidden">
+                            ${headerBgHtml}
+                            <div class="relative z-10 flex items-center justify-between gap-2">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg border text-xs font-tech font-bold uppercase tracking-wider backdrop-blur-md ${rBadge.color}">
+                                    <i class="fa-solid ${rBadge.icon}"></i> ${escapeHTML(acc.rank)}
+                                </span>
+
+                                <div class="flex items-center gap-1.5">
+                                    ${isAdminItem
+                                        ? `<span class="px-2.5 py-1 rounded-lg bg-ffcyan/20 text-ffcyan text-[10px] font-extrabold border border-ffcyan/50 uppercase"><i class="fa-solid fa-crown mr-1"></i>Oficial</span>`
+                                        : `<span class="px-2.5 py-1 rounded-lg bg-ffgold/20 text-ffgold text-[10px] font-bold border border-ffgold/40">Comunidad</span>`
+                                    }
+                                    ${isSold
+                                        ? `<span class="px-2.5 py-1 rounded-lg bg-rose-600 text-white font-extrabold text-[11px] uppercase">VENDIDA</span>`
+                                        : `<span class="px-2.5 py-1 rounded-lg bg-ffdark/85 text-gray-300 font-mono text-xs border border-gray-700">#${shortId}</span>`
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="relative z-10 flex items-end justify-between gap-3">
+                                <div class="min-w-0">
+                                    <span class="text-xs font-tech font-bold text-ffcyan uppercase tracking-wider">
+                                        ${escapeHTML(acc.region)} • ${escapeHTML(acc.bind)}
+                                    </span>
+                                    <h3 class="font-gamer font-bold text-lg text-white leading-snug truncate group-hover:text-ffcyan transition-colors">
+                                        ${escapeHTML(acc.title)}
+                                    </h3>
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-ffdark/90 border border-gray-700/80 flex items-center justify-center ${theme.accent} text-lg shrink-0">
+                                    <i class="fa-solid ${theme.icon}"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-5">
+                            <div class="grid grid-cols-3 gap-2 bg-ffdark p-3 rounded-xl border border-gray-800/90 mb-4 text-center">
+                                <div>
+                                    <span class="block text-[10px] font-tech uppercase tracking-wider text-gray-400">Nivel</span>
+                                    <span class="font-gamer font-bold text-base sm:text-lg text-white">Nvl ${escapeHTML(acc.level)}</span>
+                                </div>
+                                <div class="border-x border-gray-800">
+                                    <span class="block text-[10px] font-tech uppercase tracking-wider text-gray-400">Pases Élites</span>
+                                    <span class="font-gamer font-bold text-base sm:text-lg text-ffcyan">${escapeHTML(acc.elitePasses)}</span>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] font-tech uppercase tracking-wider text-gray-400">Acceso</span>
+                                    <span class="font-gamer font-bold text-xs sm:text-sm text-ffgold">${escapeHTML(acc.bind)}</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="block text-xs font-tech font-bold text-gray-400 uppercase tracking-wider mb-2">
+                                    <i class="fa-solid fa-gun text-fforange mr-1"></i> Evolutivas y Skins:
+                                </span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    ${evosList.slice(0, 3).map(evo => `
+                                        <span class="text-xs bg-ffsurface text-gray-200 px-2.5 py-1 rounded-lg border border-gray-700/80">
+                                            ${escapeHTML(evo)}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 pt-3 border-t border-gray-800/70 mt-auto">
+                        <div class="flex items-center justify-between mb-3.5">
+                            <div>
+                                <span class="block text-[11px] font-tech uppercase tracking-wider text-gray-400">Precio</span>
+                                <span class="font-gamer font-extrabold text-2xl sm:text-3xl text-white">$${escapeHTML(acc.price)} <span class="text-xs font-sans font-bold text-ffgold">USD</span></span>
+                            </div>
+                            <button type="button" onclick="openAccountDetail('${acc.docId}')" class="px-3.5 py-2 rounded-xl bg-ffsurface hover:bg-gray-700 text-gray-200 text-xs font-bold border border-gray-700 transition-colors flex items-center gap-1.5">
+                                <i class="fa-solid fa-eye text-ffcyan"></i> Ver Info
+                            </button>
+                        </div>
+
+                        <div class="space-y-2">
+                            ${!isSold && sellerWaLink ? `
+                                <a href="${sellerWaLink}" target="_blank" rel="noopener noreferrer"
+                                   class="w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-ffdark font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-neon-emerald">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i> Hablar con el Vendedor (${escapeHTML(acc.sellerWhatsapp)})
+                                </a>
+                            ` : ''}
+                            ${!isSold ? `
+                                <button type="button" onclick="openCheckoutModal('${acc.docId}')" 
+                                        class="w-full py-3 px-4 rounded-xl ${isAdminItem ? 'bg-gradient-to-r from-emerald-500 to-teal-400 text-ffdark font-gamer font-extrabold shadow-neon-emerald' : 'bg-ffdark hover:bg-ffcyan/15 text-ffcyan border border-ffcyan/50 font-bold'} text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-cart-shopping"></i> Comprar Cuenta (Pago Móvil)
+                                </button>
+                            ` : `
+                                <button type="button" disabled class="w-full py-3 rounded-xl bg-gray-800 text-gray-500 font-bold text-sm cursor-not-allowed">
+                                    Cuenta Vendida
+                                </button>
+                            `}
+
+                            ${canManage ? `
+                                <div class="flex gap-2 pt-1">
+                                    ${isAdminAuthenticated ? `
+                                        <button type="button" onclick="quickEditPricePrompt('${acc.docId}')" class="flex-1 py-2 rounded-xl bg-ffcyan/15 text-ffcyan border border-ffcyan/40 text-xs font-bold hover:bg-ffcyan hover:text-ffdark transition-colors">
+                                            <i class="fa-solid fa-pen mr-1"></i> Cambiar Precio
+                                        </button>
+                                    ` : `
+                                        <button type="button" onclick="promptMarkSold('${acc.docId}')" class="flex-1 py-2 rounded-xl bg-ffgold/15 text-ffgold border border-ffgold/40 text-xs font-bold hover:bg-ffgold hover:text-ffdark transition-colors">
+                                            Marcar Vendida
+                                        </button>
+                                    `}
+                                    <button type="button" onclick="promptDeleteAccount('${acc.docId}')" class="flex-1 py-2 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/50 text-xs font-bold hover:bg-rose-600 hover:text-white transition-colors flex items-center justify-center gap-1.5">
+                                        <i class="fa-solid fa-trash-can"></i> Borrar Cuenta
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+
+                accountsGrid.appendChild(card);
+            });
+        }
+
+        window.quickEditPricePrompt = function(docId) {
+            const acc = allAccounts.find(a => a.docId === docId);
+            if (!acc) return;
+            const nuevo = prompt(`Nuevo precio en USD para "${acc.title}" (actual: $${acc.price}):`, acc.price);
+            if (nuevo === null) return;
+            const parsed = Number(nuevo);
+            if (!parsed || parsed <= 0) {
+                showToast("Precio no válido.");
+                return;
+            }
+            allAccounts = allAccounts.map(a => a.docId === docId ? { ...a, price: parsed } : a);
+            saveAccountsToStorage();
+            applyFilters();
+            showToast(`Precio actualizado a $${parsed} USD.`);
+        };
+
+        // =========================================================================
+        // COMPRA DE CUENTA
+        // =========================================================================
+        window.openCheckoutModal = function(docId) {
+            const acc = allAccounts.find(a => a.docId === docId);
+            if (!acc) return;
+            selectedCheckoutAccount = acc;
+            const shortId = escapeHTML(acc.code || acc.docId.slice(0, 6).toUpperCase());
+
+            document.getElementById('checkout-account-summary').innerHTML = `
+                <div>
+                    <span class="px-2 py-0.5 rounded bg-ffcyan/15 text-ffcyan font-mono text-xs font-bold">#${shortId}</span>
+                    <h4 class="font-gamer font-bold text-sm sm:text-base text-white mt-1">${escapeHTML(acc.title)}</h4>
+                </div>
+                <div class="text-left sm:text-right shrink-0">
+                    <span class="block text-[10px] font-tech uppercase text-gray-400">Total a Pagar</span>
+                    <span class="font-gamer font-extrabold text-2xl text-ffgold">$${escapeHTML(acc.price)} USD</span>
+                </div>
+            `;
+
+            document.getElementById('checkout-payment-form').reset();
+            document.getElementById('checkout-payment-form').classList.remove('hidden');
+            document.getElementById('checkout-confirmed-ticket').classList.add('hidden');
+            document.getElementById('checkout-preview-box').classList.add('hidden');
+            validatePaymentVerifier('checkout');
+            renderPagoMovilAndFeeLabels();
+
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeCheckoutModal = function() {
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        window.handleScreenshotPreview = function(inputEl, boxId, imgId) {
+            const box = document.getElementById(boxId);
+            const img = document.getElementById(imgId);
+            if (inputEl.files && inputEl.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    box.classList.remove('hidden');
+                    if (boxId.startsWith('checkout')) validatePaymentVerifier('checkout');
+                    else if (boxId.startsWith('topup')) validateTopupVerifier();
+                };
+                reader.readAsDataURL(inputEl.files[0]);
+            }
+        };
+
+        window.validatePaymentVerifier = function(prefix) {
+            const fileInput = document.getElementById(`${prefix}-screenshot`);
+            const refInput = document.getElementById(`${prefix}-ref`);
+            const phoneInput = document.getElementById(`${prefix}-buyer-phone`);
+            const badge = document.getElementById(`${prefix}-verifier-badge`);
+            const statusBox = document.getElementById(`${prefix}-verifier-status`);
+
+            const hasFile = fileInput && fileInput.files && fileInput.files.length > 0;
+            const refVal = refInput ? refInput.value.trim() : '';
+            const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+            const isRefValid = /^[0-9]{4,12}$/.test(refVal);
+            const isPhoneValid = phoneVal.length >= 7;
+
+            if (hasFile && isRefValid && isPhoneValid) {
+                badge.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40";
+                badge.innerHTML = `<i class="fa-solid fa-check-circle mr-1"></i> Listo para Confirmar`;
+                statusBox.className = "p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2.5";
+                statusBox.innerHTML = `<i class="fa-solid fa-shield-check text-emerald-400 text-base"></i> <span>Captura adjunta y referencia <strong>#${escapeHTML(refVal)}</strong> verificadas. Pulsa <strong>Confirmar Pago</strong>.</span>`;
+                return true;
+            } else {
+                badge.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-ffgold/15 text-ffgold border border-ffgold/30";
+                badge.textContent = "Verificación Pendiente";
+                statusBox.className = "p-3 rounded-xl bg-ffcard/80 border border-gray-800 text-xs text-gray-400 flex items-center gap-2.5";
+                statusBox.innerHTML = `<i class="fa-solid fa-circle-info text-ffcyan"></i> <span>Adjunta la captura, escribe la referencia (4-12 dígitos) y tu teléfono.</span>`;
+                return false;
+            }
+        };
+
+        document.getElementById('checkout-payment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!selectedCheckoutAccount) return;
+            if (!validatePaymentVerifier('checkout')) {
+                showToast("Completa la captura, referencia y teléfono.");
+                return;
+            }
+
+            const refNumber = document.getElementById('checkout-ref').value.trim();
+            const buyerPhone = document.getElementById('checkout-buyer-phone').value.trim();
+            const fileName = document.getElementById('checkout-screenshot').files[0]?.name || 'captura_pago.jpg';
+            const shortId = selectedCheckoutAccount.code || selectedCheckoutAccount.docId.slice(0, 6).toUpperCase();
+
+            const waConfirmMsg = `Hola 👋, acabo de *CONFIRMAR MI PAGO MÓVIL* en DARKCODE:
+
+` +
+                                 `🆔 *Código Cuenta:* #${shortId}
+` +
+                                 `🔥 *Cuenta:* ${selectedCheckoutAccount.title}
+` +
+                                 `💵 *Monto:* $${selectedCheckoutAccount.price} USD
+` +
+                                 `🧾 *Referencia Pago Móvil:* #${refNumber}
+` +
+                                 `📱 *Mi Teléfono:* ${buyerPhone}`;
+
+            document.getElementById('ticket-summary-details').innerHTML = `
+                <div><strong>Cuenta:</strong> #${escapeHTML(shortId)} - ${escapeHTML(selectedCheckoutAccount.title)}</div>
+                <div><strong>Monto:</strong> $${escapeHTML(selectedCheckoutAccount.price)} USD</div>
+                <div><strong>Referencia Verificada:</strong> #${escapeHTML(refNumber)}</div>
+                <div><strong>Teléfono:</strong> ${escapeHTML(buyerPhone)}</div>
+                <div><strong>Captura:</strong> ${escapeHTML(fileName)}</div>
+            `;
+
+            document.getElementById('ticket-wa-1').href = `https://wa.me/${ADMIN_PAGO_MOVIL_WA}?text=${encodeURIComponent(waConfirmMsg)}`;
+            document.getElementById('ticket-wa-2').href = `https://wa.me/${ADMIN_WHATSAPP_1}?text=${encodeURIComponent(waConfirmMsg)}`;
+
+            document.getElementById('checkout-payment-form').classList.add('hidden');
+            document.getElementById('checkout-confirmed-ticket').classList.remove('hidden');
+            showToast("¡Pago confirmado! Envía la captura por WhatsApp.");
+        });
+
+        // =========================================================================
+        // PUBLICAR CUENTA
+        // =========================================================================
+        function compressImageToDataURL(file, maxWidth = 800, quality = 0.72) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+                        if (width > maxWidth) {
+                            height = Math.round((height * maxWidth) / width);
+                            width = maxWidth;
+                        }
+                        canvas.width = width;
+                        canvas.height = height;
+                        canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+                        resolve(canvas.toDataURL('image/jpeg', quality));
+                    };
+                    img.onerror = reject;
+                    img.src = event.target.result;
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        window.handleAccountPhotosUpload = async function(inputEl, mode) {
+            if (!inputEl.files || inputEl.files.length === 0) return;
+            try {
+                if (mode === 'main') {
+                    uploadedMainPhotoBase64 = await compressImageToDataURL(inputEl.files[0], 850, 0.75);
+                } else {
+                    const files = Array.from(inputEl.files).slice(0, 2);
+                    const compressed = [];
+                    for (const f of files) compressed.push(await compressImageToDataURL(f, 750, 0.7));
+                    uploadedGalleryPhotosBase64 = compressed;
+                }
+                renderUploadedAccountPhotosPreview();
+            } catch (e) {}
+        };
+
+        function renderUploadedAccountPhotosPreview() {
+            const box = document.getElementById('pub-uploaded-photos-preview');
+            const allImgs = [];
+            if (uploadedMainPhotoBase64) allImgs.push({ label: 'Portada', src: uploadedMainPhotoBase64 });
+            uploadedGalleryPhotosBase64.forEach((src, i) => allImgs.push({ label: `Foto ${i + 2}`, src }));
+            if (allImgs.length === 0) {
+                box.classList.add('hidden');
+                box.classList.remove('grid');
+                return;
+            }
+            box.classList.remove('hidden');
+            box.classList.add('grid');
+            box.innerHTML = allImgs.map(item => `
+                <div class="relative rounded-xl overflow-hidden border border-ffcyan/40 bg-black/50 h-20">
+                    <img src="${item.src}" alt="${item.label}" class="w-full h-full object-cover">
+                    <span class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-black/75 text-[10px] font-bold text-ffcyan">${item.label}</span>
+                </div>
+            `).join('');
+        }
+
+        window.openPublishModal = function(asAdminStore = false) {
+            if (asAdminStore && !isAdminAuthenticated) {
+                openAdminPanelModal();
+                return;
+            }
+
+            document.getElementById('pub-is-admin-store').value = asAdminStore ? 'true' : 'false';
+            uploadedMainPhotoBase64 = "";
+            uploadedGalleryPhotosBase64 = [];
+            renderUploadedAccountPhotosPreview();
+
+            const modalTitle = document.getElementById('pub-modal-title');
+            const modalSubtitle = document.getElementById('pub-modal-subtitle');
+            const adminBanner = document.getElementById('pub-admin-free-banner');
+            const commissionSection = document.getElementById('pub-commission-section');
+            const submitBtn = document.getElementById('publish-submit-btn');
+            const feeFile = document.getElementById('pub-fee-screenshot');
+            const feeRef = document.getElementById('pub-fee-ref');
+            const waWrapper = document.getElementById('pub-whatsapp-wrapper');
+            const waInput = document.getElementById('pub-whatsapp');
+
+            if (asAdminStore) {
+                modalTitle.textContent = "Publicar Cuenta Oficial";
+                modalSubtitle.textContent = "Sección Comprar con el Administrador • Sin Comisión ($0)";
+                adminBanner.classList.remove('hidden');
+                commissionSection.classList.add('hidden');
+                waWrapper.classList.add('hidden');
+                waInput.required = false;
+                feeFile.required = false;
+                feeRef.required = false;
+                submitBtn.className = "w-full py-4 rounded-xl bg-gradient-to-r from-ffcyan to-blue-500 text-ffdark font-gamer font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-cyan flex items-center justify-center gap-2";
+                submitBtn.innerHTML = `<i class="fa-solid fa-crown"></i> Publicar Cuenta Oficial (Sin Comisión)`;
+            } else {
+                modalTitle.textContent = "Publicar mi Cuenta (Comunidad)";
+                modalSubtitle.textContent = `Comisión única de publicación: $${pagoMovilData.publishFeeUsd} USD por Pago Móvil`;
+                adminBanner.classList.add('hidden');
+                commissionSection.classList.remove('hidden');
+                waWrapper.classList.remove('hidden');
+                waInput.required = true;
+                feeFile.required = true;
+                feeRef.required = true;
+                submitBtn.className = "w-full py-4 rounded-xl bg-gradient-to-r from-ffgold to-fforange text-ffdark font-gamer font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-neon-gold flex items-center justify-center gap-2";
+                submitBtn.innerHTML = `<i class="fa-solid fa-rocket"></i> Confirmar Pago ($${pagoMovilData.publishFeeUsd}) y Publicar Cuenta`;
+            }
+
+            renderPagoMovilAndFeeLabels();
+            const modal = document.getElementById('publish-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closePublishModal = function() {
+            const modal = document.getElementById('publish-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        document.getElementById('publish-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const isAdminStore = document.getElementById('pub-is-admin-store').value === 'true';
+            const feeRef = document.getElementById('pub-fee-ref').value.trim();
+            const feeFile = document.getElementById('pub-fee-screenshot').files[0];
+
+            if (!isAdminStore && (!feeFile || !/^[0-9]{4,12}$/.test(feeRef))) {
+                showToast("Adjunta la captura de la comisión y escribe una referencia numérica válida.");
+                return;
+            }
+
+            const title = document.getElementById('pub-title').value.trim();
+            const price = Number(document.getElementById('pub-price').value);
+            const level = Number(document.getElementById('pub-level').value);
+            const rank = document.getElementById('pub-rank').value;
+            const region = document.getElementById('pub-region').value;
+            const elitePasses = Number(document.getElementById('pub-passes').value);
+            const bind = document.getElementById('pub-bind').value;
+            const sellerWhatsapp = document.getElementById('pub-whatsapp').value.trim();
+            const evos = document.getElementById('pub-evos').value.trim().split(',').map(s => s.trim()).filter(Boolean);
+            const description = document.getElementById('pub-desc').value.trim();
+            const imageUrl = document.getElementById('pub-image-url').value.trim();
+            const bannerTheme = document.querySelector('input[name="banner-theme"]:checked')?.value || 'gold';
+
+            const docId = 'acc_' + Date.now();
+            const code = (isAdminStore ? 'ADM-' : 'DC-') + Math.floor(1000 + Math.random() * 9000);
+
+            const newAccount = {
+                docId,
+                code,
+                title,
+                price,
+                level,
+                rank,
+                region,
+                elitePasses,
+                bind,
+                sellerWhatsapp: isAdminStore ? '' : sellerWhatsapp,
+                evos,
+                description,
+                imageUrl,
+                photoBase64: uploadedMainPhotoBase64,
+                galleryPhotos: uploadedGalleryPhotosBase64,
+                bannerTheme,
+                isAdminStore,
+                status: 'available',
+                ownerId: 'local-user',
+                createdAt: Date.now()
+            };
+
+            allAccounts.unshift(newAccount);
+            saveAccountsToStorage();
+            saveMyPublishedId(docId);
+
+            const notifyMsg = `Cuenta publicada en DARKCODE:
+🆔 *Código:* #${code}
+🔥 *Título:* ${title}
+💵 *Precio:* $${price} USD`;
+            document.getElementById('notify-admin1-wa-link').href = `https://wa.me/${ADMIN_WHATSAPP_1}?text=${encodeURIComponent(notifyMsg)}`;
+            document.getElementById('notify-admin2-wa-link').href = `https://wa.me/${ADMIN_WHATSAPP_2}?text=${encodeURIComponent(notifyMsg)}`;
+
+            document.getElementById('publish-form').reset();
+            uploadedMainPhotoBase64 = "";
+            uploadedGalleryPhotosBase64 = [];
+            renderUploadedAccountPhotosPreview();
+            document.getElementById('pub-preview-box').classList.add('hidden');
+            closePublishModal();
+
+            switchCatalogTab(isAdminStore ? 'admin' : 'community');
+            document.getElementById('published-success-modal').classList.remove('hidden');
+            document.getElementById('published-success-modal').classList.add('flex');
+            showToast("¡Cuenta publicada! Ya puedes borrarla o editarla.");
+        });
+
+        // =========================================================================
+        // DETALLES Y BORRADO DE CUENTA
+        // =========================================================================
+        window.openAccountDetail = function(docId) {
+            const acc = allAccounts.find(a => a.docId === docId);
+            if (!acc) return;
+            const theme = bannerThemes[acc.bannerTheme] || bannerThemes.gold;
+            const rBadge = rankBadges[acc.rank] || rankBadges["Heroico"];
+            const shortId = escapeHTML(acc.code || acc.docId.slice(0, 6).toUpperCase());
+            const isSold = acc.status === 'sold';
+            const canManage = isAccountOwner(acc);
+            const evosList = Array.isArray(acc.evos) ? acc.evos : [];
+
+            document.getElementById('modal-content').innerHTML = `
+                <div class="relative p-6 sm:p-8 bg-gradient-to-r ${theme.gradient} border-b border-gray-800">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="px-3 py-1 rounded-lg bg-ffdark/90 text-ffcyan font-mono text-xs font-bold">#${shortId}</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg border text-xs font-tech font-bold uppercase ${rBadge.color}">
+                            <i class="fa-solid ${rBadge.icon}"></i> ${escapeHTML(acc.rank)}
+                        </span>
+                        <span class="px-3 py-1 rounded-lg bg-ffdark/90 text-ffgold text-xs font-bold">${escapeHTML(acc.region)}</span>
+                    </div>
+                    <h2 class="font-gamer font-bold text-xl sm:text-3xl text-white">${escapeHTML(acc.title)}</h2>
+                </div>
+
+                <div class="p-6 sm:p-8 space-y-6">
+                    <div class="grid grid-cols-3 gap-3 bg-ffdark p-4 rounded-2xl border border-gray-800 text-center">
+                        <div>
+                            <span class="text-xs font-tech uppercase text-gray-400 block">Nivel</span>
+                            <span class="font-gamer font-bold text-xl text-white">${escapeHTML(acc.level)}</span>
+                        </div>
+                        <div class="border-x border-gray-800">
+                            <span class="text-xs font-tech uppercase text-gray-400 block">Rango</span>
+                            <span class="font-gamer font-bold text-lg text-ffgold">${escapeHTML(acc.rank)}</span>
+                        </div>
+                        <div>
+                            <span class="text-xs font-tech uppercase text-gray-400 block">Pases Élites</span>
+                            <span class="font-gamer font-bold text-xl text-ffcyan">${escapeHTML(acc.elitePasses)}</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-gamer font-bold text-sm text-white uppercase mb-2">Armas Evolutivas y Skins</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${evosList.map(evo => `<span class="px-3 py-1.5 rounded-xl bg-ffdark border border-gray-700 text-xs text-gray-200">${escapeHTML(evo)}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-gamer font-bold text-sm text-white uppercase mb-2">Detalles</h4>
+                        <div class="bg-ffdark/70 p-4 rounded-2xl border border-gray-800 text-sm text-gray-300">${escapeHTML(acc.description)}</div>
+                    </div>
+
+                    ${canManage ? `
+                        <div class="bg-ffdark border border-rose-500/40 rounded-2xl p-4 flex items-center justify-between gap-3">
+                            <span class="text-xs font-bold text-gray-200">Gestionar publicación:</span>
+                            <div class="flex gap-2">
+                                ${isAdminAuthenticated ? `
+                                    <button type="button" onclick="quickEditPricePrompt('${acc.docId}')" class="px-3.5 py-2 rounded-xl bg-ffcyan text-ffdark text-xs font-bold">Cambiar Precio</button>
+                                ` : ''}
+                                <button type="button" onclick="promptDeleteAccount('${acc.docId}')" class="px-4 py-2 rounded-xl bg-rose-600 text-white text-xs font-bold">
+                                    <i class="fa-solid fa-trash-can mr-1"></i> Borrar Cuenta
+                                </button>
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <div class="pt-3 border-t border-gray-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-tech uppercase text-gray-400 block">Precio</span>
+                            <span class="font-gamer font-extrabold text-3xl text-white">$${escapeHTML(acc.price)} <span class="text-sm text-ffgold">USD</span></span>
+                        </div>
+                        ${!isSold ? `
+                            <button type="button" onclick="closeModal(); openCheckoutModal('${acc.docId}')" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 text-ffdark font-gamer font-bold text-xs uppercase">
+                                Comprar Ahora
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+
+            const modal = document.getElementById('account-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.promptMarkSold = function(docId) {
+            document.getElementById('confirm-modal-title').textContent = "¿Marcar cuenta como vendida?";
+            document.getElementById('confirm-modal-text').textContent = "La tarjeta quedará marcada como VENDIDA.";
+            document.getElementById('confirm-modal-btn').className = "flex-1 py-3 rounded-xl bg-ffgold text-ffdark font-bold text-sm";
+            pendingConfirmAction = () => {
+                allAccounts = allAccounts.map(a => a.docId === docId ? { ...a, status: 'sold' } : a);
+                saveAccountsToStorage();
+                applyFilters();
+                closeConfirmModal();
+                closeModal();
+                showToast("Cuenta marcada como vendida.");
+            };
+            openConfirmModal();
+        };
+
+        window.promptDeleteAccount = function(docId) {
+            document.getElementById('confirm-modal-title').textContent = "¿Borrar esta cuenta?";
+            document.getElementById('confirm-modal-text').textContent = "Se eliminará permanentemente de tu catálogo.";
+            document.getElementById('confirm-modal-btn').className = "flex-1 py-3 rounded-xl bg-rose-600 text-white font-bold text-sm";
+            pendingConfirmAction = () => {
+                allAccounts = allAccounts.filter(a => a.docId !== docId);
+                saveAccountsToStorage();
+                removeMyPublishedId(docId);
+                applyFilters();
+                if (!document.getElementById('admin-dashboard-modal').classList.contains('hidden')) {
+                    renderAdminDashboardContent();
+                }
+                closeConfirmModal();
+                closeModal();
+                showToast("Cuenta borrada.");
+            };
+            openConfirmModal();
+        };
+
+        document.getElementById('confirm-modal-btn').addEventListener('click', () => {
+            if (typeof pendingConfirmAction === 'function') pendingConfirmAction();
+        });
+
+        window.closeSuccessModal = function() {
+            const modal = document.getElementById('published-success-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+        };
+
+        window.closeModal = function() {
+            const modal = document.getElementById('account-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        window.openConfirmModal = function() {
+            const modal = document.getElementById('confirm-action-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closeConfirmModal = function() {
+            const modal = document.getElementById('confirm-action-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            pendingConfirmAction = null;
+        };
+
+        window.resetFilters = function() {
+            searchInput.value = '';
+            rankFilter.value = 'all';
+            regionFilter.value = 'all';
+            applyFilters();
+        };
+
+        window.toggleNavWaMenu = function(forceState) {
+            const dropdown = document.getElementById('nav-wa-dropdown');
+            if (!dropdown) return;
+            if (typeof forceState === 'boolean') dropdown.classList.toggle('hidden', !forceState);
+            else dropdown.classList.toggle('hidden');
+        };
+
+        window.toggleFloatingWaMenu = function(forceState) {
+            const menu = document.getElementById('floating-wa-menu');
+            if (!menu) return;
+            if (typeof forceState === 'boolean') menu.classList.toggle('hidden', !forceState);
+            else menu.classList.toggle('hidden');
+        };
+
+        document.addEventListener('click', (e) => {
+            const navContainer = document.getElementById('nav-wa-container');
+            if (navContainer && !navContainer.contains(e.target)) window.toggleNavWaMenu(false);
+            const floatContainer = document.getElementById('floating-wa-container');
+            if (floatContainer && !floatContainer.contains(e.target)) window.toggleFloatingWaMenu(false);
+        });
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+
+        ['publish-modal', 'account-modal', 'confirm-action-modal', 'published-success-modal', 'checkout-modal', 'admin-login-modal', 'admin-dashboard-modal', 'topup-modal'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.addEventListener('click', (e) => {
+                if (e.target === el) {
+                    el.classList.add('hidden');
+                    el.classList.remove('flex');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+        rankFilter.addEventListener('change', applyFilters);
+        regionFilter.addEventListener('change', applyFilters);
+
+        loadStateFromStorage();
+        renderPagoMovilAndFeeLabels();
+        switchCatalogTab('community');
+    </script>
+</body>
+</html>
